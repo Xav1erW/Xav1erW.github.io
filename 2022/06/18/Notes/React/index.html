@@ -31,7 +31,7 @@
 <meta property="og:image" content="http://example.com/2022/06/18/Notes/React/figs/生命周期流程.svg">
 <meta property="og:image" content="http://example.com/2022/06/18/Notes/React/figs/生命周期新.jpg">
 <meta property="article:published_time" content="2022-06-18T08:10:31.822Z">
-<meta property="article:modified_time" content="2022-06-18T08:11:43.005Z">
+<meta property="article:modified_time" content="2022-06-18T13:46:43.452Z">
 <meta property="article:author" content="Xav1er">
 <meta property="article:tag" content="React">
 <meta property="article:tag" content="前端">
@@ -100,23 +100,9 @@
             </li>
         
             <li class="waves-block waves-effect">
-              <a href="https://github.com/Xavi1erW" target="_blank" >
+              <a href="https://github.com/Xav1erW" target="_blank" >
                 <i class="icon icon-lg icon-github"></i>
                 Github
-              </a>
-            </li>
-        
-            <li class="waves-block waves-effect">
-              <a href="https://github.com/Xavi1erW/" target="_blank" >
-                <i class="icon icon-lg icon-weibo"></i>
-                Weibo
-              </a>
-            </li>
-        
-            <li class="waves-block waves-effect">
-              <a href="/custom"  >
-                <i class="icon icon-lg icon-link"></i>
-                测试
               </a>
             </li>
         
@@ -161,7 +147,7 @@
 </time>
 
 
-	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Tech/">Tech</a></li></ul>
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Tech/">Tech</a><ul class="article-category-list-child"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Tech/React/">React</a></li></ul></li></ul>
 
             
         </h5>
@@ -192,7 +178,7 @@
             <time class="post-time" title="2022-06-18 16:10:31" datetime="2022-06-18T08:10:31.822Z"  itemprop="datePublished">2022-06-18</time>
 
             
-	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Tech/">Tech</a></li></ul>
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Tech/">Tech</a><ul class="article-category-list-child"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Tech/React/">React</a></li></ul></li></ul>
 
 
 
@@ -727,7 +713,7 @@
     <div class="content">
         
 <span class="post-time">
-    最后更新时间：<time datetime="2022-06-18T08:11:43.005Z" itemprop="dateUpdated">2022-06-18 16:11:43</time>
+    最后更新时间：<time datetime="2022-06-18T13:46:43.452Z" itemprop="dateUpdated">2022-06-18 21:46:43</time>
 </span><br>
 
 
@@ -856,18 +842,8 @@
     <div class="reward-content">
         
         <div class="reward-code">
-            <img id="rewardCode" src="/img/wechat.jpg" alt="打赏二维码">
+            <img id="rewardCode" src="/img/alipay.jpg" alt="打赏二维码">
         </div>
-        
-        <label class="reward-toggle">
-            <input id="rewardToggle" type="checkbox" class="reward-toggle-check"
-                data-wechat="/img/wechat.jpg" data-alipay="/img/alipay.jpg">
-            <div class="reward-toggle-ctrol">
-                <span class="reward-toggle-item wechat">微信</span>
-                <span class="reward-toggle-label"></span>
-                <span class="reward-toggle-item alipay">支付宝</span>
-            </div>
-        </label>
         
     </div>
 </div>
@@ -988,6 +964,27 @@ var BLOG = { ROOT: '/', SHARE: true, REWARD: true };
 
 
 
+<!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+});
+</script>
+
+<script async src="//cdn.bootcss.com/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML" async></script>
+
 
 
 
@@ -1000,10 +997,10 @@ var BLOG = { ROOT: '/', SHARE: true, REWARD: true };
     var OriginTitile = document.title, titleTime;
     document.addEventListener('visibilitychange', function() {
         if (document.hidden) {
-            document.title = '死鬼去哪里了！';
+            document.title = '离开了哟！';
             clearTimeout(titleTime);
         } else {
-            document.title = '(つェ⊂)咦!又好了!';
+            document.title = '(つェ⊂)回来啦！';
             titleTime = setTimeout(function() {
                 document.title = OriginTitile;
             },2000);

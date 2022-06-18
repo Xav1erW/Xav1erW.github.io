@@ -91,23 +91,9 @@
             </li>
         
             <li class="waves-block waves-effect">
-              <a href="https://github.com/Xavi1erW" target="_blank" >
+              <a href="https://github.com/Xav1erW" target="_blank" >
                 <i class="icon icon-lg icon-github"></i>
                 Github
-              </a>
-            </li>
-        
-            <li class="waves-block waves-effect">
-              <a href="https://github.com/Xavi1erW/" target="_blank" >
-                <i class="icon icon-lg icon-weibo"></i>
-                Weibo
-              </a>
-            </li>
-        
-            <li class="waves-block waves-effect">
-              <a href="/custom"  >
-                <i class="icon icon-lg icon-link"></i>
-                测试
               </a>
             </li>
         
@@ -164,6 +150,18 @@
             <a href="/tags/%E5%89%8D%E7%AB%AF/" style="-webkit-order:1;order:1" class="tags-list-item waves-effect waves-button waves-light active">前端</a>
 
         
+
+            <a href="/tags/%E5%BD%A2%E5%BC%8F%E8%AF%AD%E8%A8%80%E4%B8%8E%E8%87%AA%E5%8A%A8%E6%9C%BA/" style="-webkit-order:2;order:2" class="tags-list-item waves-effect waves-button waves-light">形式语言与自动机</a>
+
+        
+
+            <a href="/tags/%E8%AF%BE%E5%86%85/" style="-webkit-order:3;order:3" class="tags-list-item waves-effect waves-button waves-light">课内</a>
+
+        
+
+            <a href="/tags/%E5%A4%8D%E4%B9%A0/" style="-webkit-order:4;order:4" class="tags-list-item waves-effect waves-button waves-light">复习</a>
+
+        
     </nav>
     <!-- PC show more-->
     <div class="tags-list-more">
@@ -186,7 +184,7 @@
       <time class="post-time" title="2022-06-18 16:10:31" datetime="2022-06-18T08:10:31.822Z"  itemprop="datePublished">2022-06-18</time>
 
       
-	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Tech/">Tech</a></li></ul>
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Tech/">Tech</a><ul class="article-category-list-child"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Tech/React/">React</a></li></ul></li></ul>
 
 
 
@@ -331,6 +329,27 @@ var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
 
 
 
+<!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+});
+</script>
+
+<script async src="//cdn.bootcss.com/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML" async></script>
+
 
 
 
@@ -343,10 +362,10 @@ var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
     var OriginTitile = document.title, titleTime;
     document.addEventListener('visibilitychange', function() {
         if (document.hidden) {
-            document.title = '死鬼去哪里了！';
+            document.title = '离开了哟！';
             clearTimeout(titleTime);
         } else {
-            document.title = '(つェ⊂)咦!又好了!';
+            document.title = '(つェ⊂)回来啦！';
             titleTime = setTimeout(function() {
                 document.title = OriginTitile;
             },2000);
