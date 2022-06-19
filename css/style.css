@@ -2543,6 +2543,9 @@ hr,
   -ms-flex: 0 auto;
   flex: 0 auto;
 }
+.mermaid {
+  background: transparent;
+}
 #loading {
   position: fixed;
   top: 0;
