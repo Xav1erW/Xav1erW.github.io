@@ -106,7 +106,7 @@ deploy:
   type: git
   repo: https://github.com/Xav1erW/Xav1erW.github.io
   branch: master
-  token: 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
+  token: # token
   
 # hexo-renderer-pandoc (https://github.com/wzpan/hexo-renderer-pandoc)
 pandoc:
