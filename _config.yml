@@ -104,9 +104,9 @@ theme: indigo
 ## Docs: https://hexo.io/docs/one-command-deployment
 deploy:
   type: git
-  repo: https://github.com/Xav1erW/Xav1erW.github.io
+  repo: git@github.com:Xav1erW/Xav1erW.github.io.git
   branch: master
-  token: # token
+  token: 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
   
 # hexo-renderer-pandoc (https://github.com/wzpan/hexo-renderer-pandoc)
 pandoc:
