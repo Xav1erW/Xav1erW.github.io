@@ -2921,6 +2921,7 @@ a[title="站长统计"] {
   .container {
     width: 100%;
     padding: 20px 16px;
+    min-width: 0px;
   }
 }
 @media screen and (max-width: 760px) {
