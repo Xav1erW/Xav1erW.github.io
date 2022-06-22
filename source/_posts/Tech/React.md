@@ -11,9 +11,7 @@ date: 2022.3.25
 author: Xav1erW
 ---
 
-# React
-
-## 组件类型和定义
+# 组件类型和定义
 
 * react组件首字母应当大写，因为使用时以标签形式使用，如果首字母小写会认为是html的内置标签，报错
 
@@ -40,9 +38,9 @@ class Welcome extends React.Component {
 }
 ```
 
-## 组件三大属性
+# 组件三大属性
 
-### state
+## state
 * 箭头函数`()=>{}` 和`function` 区别：箭头函数没有`this`，其中出现`this`会去找外侧的`this`，`function`自身有`this`。可以利用该点在类中使用箭头函数，其中用`this`改变类中的属性.
 
 * react自定义方法一般用复制加箭头函数的方法
@@ -96,9 +94,9 @@ class Foo extends React.Component{
 }
 ```
 
-### props
+## props
 
-#### 类组件中的props
+### 类组件中的props
 
 * react 的props：我们在创建组件对象时不想用constructor，如何给组件传参？利用props属性，在使用对象标签时给标签参数就可以反映到props属性上
 
@@ -215,7 +213,7 @@ class Person extends React.Component
 
 * props是只读的，不能修改
 
-#### 函数组件中的props
+### 函数组件中的props
 
 * 函数式组件通过参数的形式可以有`props`，但没有`state` 和`refs`，除非使用最新的hooks
 
@@ -245,9 +243,9 @@ Person.defaultProps = {
 ReactDOM.render(<Person name='wx'/>, document.getElementById('xxx'))
 ```
 
-### refs
+## refs
 
-#### 字符串形式的ref(不推荐)
+### 字符串形式的ref(不推荐)
 
 * 组件内的标签可以通过`ref` 来标识自己，组件会把`ref`和标签组成一对key-value放入属性`refs`中
 
@@ -273,7 +271,7 @@ class Person extends React.Component
 }
 ```
 
-#### 回调函数形式的ref
+### 回调函数形式的ref
 
 * 当`ref`为函数时，该函数作为回调函数使用，将`ref`所在节点作为参数传入函数中。一般会利用回调函数，把当前节点赋值给组件属性
 
@@ -347,7 +345,7 @@ class Person extends React.Component
 }
 ```
 
-#### createRef
+### createRef
 
 * 可以使用react内部的`createRef`来定义一个`ref`，`createRef`相当于创建一个容器，装ref对应的标签，每个`createRef`对应一个标签，`createRef`创建的ref是一个对象，其中有一个key为`currrent` 通过`myRef.current`获取到对应的标签
 
@@ -367,7 +365,7 @@ class Person extends React.Component
     }
 ```
 
-## React事件处理
+# React事件处理
 
 * React中的事件都被封装了一层
 
@@ -399,9 +397,9 @@ class Demo extends React.Component
     }
 ```
 
-## React 受控和非受控组件
+# React 受控和非受控组件
 
-### 非受控组件
+## 非受控组件
 
 ```javascript
 class Login extends React.Component
@@ -432,7 +430,7 @@ ReactDOM.render(<Login/>, document.getElementById('root'))
 * 避免表单提交刷新页面，可以使用 `event.preventDefault()` 阻止默认事件不提交表单
 * 非受控组件：页面中所有输入类DOM的值现用现取（点击登录后，回调函数获取表单值）属于非受控组件
 
-### 受控组件
+## 受控组件
 
 * 原生js 有事件`onchange` 在改变时调用`onchange` 的回调函数，React中同样有 `onChange`
 * 使用`onChange` 回调函数将输入内容直接存入状态中
@@ -523,9 +521,9 @@ return(
 ```
 直接利用回调函数给`changeFormData`传入不同的参数实现代码复用
 
-## 组件生命周期（重要）
+# 组件生命周期（重要）
 
-### 旧版本
+## 旧版本
 
 * 组件第一次被渲染到页面上时，React中称之为**挂载 (mount)** ，从页面移除时称之为 **卸载 (unmount)**
 
@@ -689,7 +687,7 @@ class B extends React.Component {
 3. 卸载组件，通常由 `ReactDOM.unmountComponentAtNode` 触发
    1. `componentWillUnmount` **常用**，通常做一些收尾工作，例：关闭定时器、取消订阅
 
-### 新版本
+## 新版本
 
 * `componentWillMount` 、`componentWillReceiveProps` 、 `componentWillUpdate` 前都需要加上`UNSAFE_`
 * 记忆：除了 `componentWillUnmount`，所有带will 的钩子都需要加`UNSAFE_`
@@ -846,7 +844,7 @@ class NewsList extends React.Component
    1. `componentWillUnmount` **常用**，通常做一些收尾工作，例：关闭定时器、取消订阅
 
 
-## Diffing算法
+# Diffing算法
 
 * React每次更新不是直接更新真实DOM，而是修改虚拟DOM，比较修改前后的虚拟DOM，只找不同的地方在真实DOM修改，不用真实DOM每次都全部更新，效率高
 * Diffing算法最小更新粒度是标签，但是会比较多层，比如
@@ -1008,9 +1006,9 @@ class Person extends React.Component {
 2. 如果结构中还包含输入类DOM：会产生错误的DOM更新造成信息的错误显示
 3. 如果不对数据进行排序、逆序、删除、插入等操作，仅用于渲染展示信息，可以使用`index`作为`key`
 
-## React脚手架
+# React脚手架
 
-### 文件介绍
+## 文件介绍
 
 * `punlic/index.html`
 
@@ -1050,7 +1048,7 @@ webpack的入口文件
 
 用于模块的整体测试
 
-### 编写方式
+## 编写方式
 
 * 不同组件放到 `src` 统一的文件夹下，文件夹内部，一个组件一个文件夹，用于存放组件使用的外部js和样式等
 * 将不同组件在App中进行组合
@@ -1060,7 +1058,7 @@ webpack的入口文件
 
 * 多层文件引入麻烦，可以不同组件文件夹不同，但定义组件的文件都叫 `index.jsx` ，这样只要引入文件夹即可
 
-### 样式模块化
+## 样式模块化
 
 * 避免不同模块之间样式冲突（不同模块指定相同名字的class不同样式，后引入的会覆盖之前引入的），要使用样式的模块化
 
@@ -1086,7 +1084,7 @@ export default class Hello extends React.Component
 }
 ```
 
-### 应用案例 TodoList
+## 应用案例 TodoList
 
 * 上方Header组件为一个输入框，接受用户输入需要完成的任务，将任务加入到列表中
 * 中间List展示已经有的任务，并且每个任务可以标志是否完成、可以删除
@@ -1096,7 +1094,7 @@ export default class Hello extends React.Component
 
 **解决**：Header用某种方式将数据传给父组件App，再由App用props的形式将数据传给List
 
-#### 子组件向父组件传递数据
+### 子组件向父组件传递数据
 
 将父组件类内部的处理、显示数据的函数传给子组件，子组件将数据作为函数参数传入并调用，相当于给父组件传入了参数，代码如下
 
@@ -1159,9 +1157,9 @@ class Header extends React.Component {
 
 具体实现见：`Todo_src`
 
-## React 和 axios
+# React 和 axios
 
-### 跨域请求和代理配置
+## 跨域请求和代理配置
 
 * 当出现以下情况，都属于跨域访问
 
@@ -1184,9 +1182,9 @@ class Header extends React.Component {
 * 发送数据时就直接给前端端口（不会产生跨域）发送数据，代理自动将数据转发
 * 注意：请求会首先在真正的前端端口下寻找资源，如果找到是不会转发给后端服务器的
 
-# 附
+ 附
 
-## 原生js基础
+# 原生js基础
 
 * 展开运算符：`...`用于展开可迭代的变量，如数组等，但字面量对象(可以理解为字典)无法直接展开
 
@@ -1202,7 +1200,7 @@ let c = [...a,...b]
 // console.log(...b)    // 会报错
 ```
 
-### 对象相关
+## 对象相关
 
 * 对象的复制：形式类似于展开运算符，但需要在外层加上`{}`
 
@@ -1240,7 +1238,7 @@ style2 = {opacity}
 // 都会得到 {opacity:0.5}
 ```
 
-### 常用
+## 常用
 
 * `setInterval` 定时器，两个参数，第一个参数为函数，为执行的操作；第二个参数为执行函数间隔的时间
 
@@ -1250,14 +1248,14 @@ setInterval(()=>{}, time)
 ```
 
 
-### 特殊概念
+## 特殊概念
 
 * 高阶函数
   1. 如果一个函数接受一个函数作为参数，那么就是高阶函数
   2. 如果一个函数将一个函数作为返回值，也是高阶函数
 * 函数的柯里化：通过函数调用最终返回函数的方式，实现多次接收参数，最后统一处理的函数编码形式。如受控和非受控组件中的[代码](#柯里化代码)
 
-## 资源
+# 资源
 
 * 库的js可以通过官网找到，下载
 * 还可以在[BootCDN](https://www.bootcdn.cn/) 找到，该网站提供了常用js库的加速访问
