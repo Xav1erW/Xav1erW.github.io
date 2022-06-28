@@ -6,7 +6,7 @@
   <link href="https://xav1erw.github.io/atom.xml" rel="self"/>
   
   <link href="https://xav1erw.github.io/"/>
-  <updated>2022-06-21T14:29:42.339Z</updated>
+  <updated>2022-06-28T07:53:10.512Z</updated>
   <id>https://xav1erw.github.io/</id>
   
   <author>
@@ -15,6 +15,36 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>git-submodule</title>
+    <link href="https://xav1erw.github.io/2022/06/28/Tech/git-submodule/"/>
+    <id>https://xav1erw.github.io/2022/06/28/Tech/git-submodule/</id>
+    <published>2022-06-28T07:53:10.000Z</published>
+    <updated>2022-06-28T07:53:10.512Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="什么是submodule">什么是Submodule</h1><p>项目中有时会使用到其他仓库的代码，如果直接clone进项目的子目录，git会在提交更改的时候提示当前git仓库嵌套有一个git仓库，而这是不允许的。</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">warning: adding embedded git repository: foo2</span><br><span class="line">hint: You&#x27;ve added another git repository inside your current repository.</span><br><span class="line">hint: Clones of the outer repository will not contain the contents of</span><br><span class="line">hint: the embedded repository and will not know how to obtain it.</span><br><span class="line">hint: If you meant to add a submodule, use:</span><br><span class="line">hint:</span><br><span class="line">hint:   git submodule add &lt;url&gt; foo2</span><br><span class="line">hint:</span><br><span class="line">hint: If you added this path by mistake, you can remove it from the</span><br><span class="line">hint: index with:</span><br><span class="line">hint:</span><br><span class="line">hint:   git rm --cached foo2</span><br><span class="line">hint:</span><br><span class="line">hint: See &quot;git help submodule&quot; for more information.</span><br></pre></td></tr></table></figure><p>还有另一种方法，直接把文件复制进项目目录，而不包含 <code>.git</code> 文件夹。这虽然可行，但是无法跟踪依赖仓库的更新。</p><p>这时就需要git submodule了。</p><p>submodule能够让另一个仓库作为本仓库的子模块，在clone是可以自动拉取最新的仓库内容，同时修改时也可以很方便的同步修改submodule对应的仓库内容。</p><h1 id="如何使用">如何使用</h1><p>使用命令</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git submodule add &lt;url&gt; path/of/submodule</span><br></pre></td></tr></table></figure><p>命令会自动clone仓库，并将另一个git仓库转化为该仓库的子模块</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">git submodule add git@github.com:Xav1erW/Foo.git foo2</span><br><span class="line">Cloning into <span class="string">&#x27;/path/to/foo/foo/foo2&#x27;</span>...</span><br><span class="line">remote: Enumerating objects: 115, <span class="keyword">done</span>.</span><br><span class="line">remote: Counting objects: 100% (115/115), <span class="keyword">done</span>.</span><br><span class="line">remote: Compressing objects: 100% (68/68), <span class="keyword">done</span>.</span><br><span class="line">remote: Total 115 (delta 39), reused 105 (delta 35), pack-reused 0</span><br><span class="line">Receiving objects: 100% (115/115), 3.68 MiB | 313.00 KiB/s, <span class="keyword">done</span>.</span><br><span class="line">Resolving deltas: 100% (39/39), <span class="keyword">done</span>.</span><br><span class="line">warning: LF will be replaced by CRLF <span class="keyword">in</span> .gitmodules.</span><br><span class="line">The file will have its original line endings <span class="keyword">in</span> your working directory</span><br></pre></td></tr></table></figure><p>此时项目根目录会出现文件 <code>.gitmodules</code> ，内容为子模块的信息</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[submodule &quot;foo2&quot;]</span><br><span class="line">path = foo2</span><br><span class="line">url = git@github.com:Xav1erW/Foo.git</span><br></pre></td></tr></table></figure><p>如果需要保存，子模块的目录和 <code>.gitmodules</code> 都需要提交保存。</p><h1 id="对submodule修改">对submodule修改</h1><p>直接生成的子模块只对应一个 <code>commit id</code> 而不属于任何一个submodule的分支，因此如果需要修改</p><ol type="1"><li>先 <code>git checkout</code> 到需要修改的分支上；</li><li>修改后，在submodule内提交其修改；</li><li>之后还需要回到父仓库下提交submodule的修改。</li></ol><h1 id="更新submodule">更新submodule</h1><p>可以直接在父仓库内使用命令</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git submodule foreach git pulll</span><br></pre></td></tr></table></figure><p>或者在submodule内进行<code>git pull</code> 操作 。</p><h1 id="clone包含submodule的仓库">clone包含submodule的仓库</h1><h2 id="递归参数">递归参数</h2><p>直接克隆不会自动克隆仓库内的submodule，因此需要带上递归参数</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> git@github.com:Xav1erW/Foo1.git --recursive</span><br></pre></td></tr></table></figure><h2 id="submodule-init">submodule init</h2><p>还可以先clone父仓库，之后在父仓库内使用</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git submodule init</span><br></pre></td></tr></table></figure><p>这会将submodule先进行注册</p><p>接着更新submodule</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git submodule update</span><br></pre></td></tr></table></figure>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;什么是submodule&quot;&gt;什么是Submodule&lt;/h1&gt;
+&lt;p&gt;项目中有时会使用到其他仓库的代码，如果直接clone进项目的子目录，git会在提交更改的时候提示当前git仓库嵌套有一个git仓库，而这是不允许的。&lt;/p&gt;
+&lt;figure class=&quot;h</summary>
+      
+    
+    
+    
+    <category term="Tech" scheme="https://xav1erw.github.io/categories/Tech/"/>
+    
+    <category term="git" scheme="https://xav1erw.github.io/categories/Tech/git/"/>
+    
+    
+    <category term="git" scheme="https://xav1erw.github.io/tags/git/"/>
+    
+    <category term="git-.submodule" scheme="https://xav1erw.github.io/tags/git-submodule/"/>
+    
+  </entry>
   
   <entry>
     <title>计算机组成原理复习</title>
