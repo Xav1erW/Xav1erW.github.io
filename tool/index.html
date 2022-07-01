@@ -16,18 +16,22 @@
     
     
     
-    <title>Archives: 2022 | Xav1er Blog</title>
+    <title>Xav1er Blog</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
     <meta name="theme-color" content="#3F51B5">
     
     
     <meta name="keywords" content="">
-    <meta property="og:type" content="website">
+    <meta name="description" content="Tool | Xav1er Blog                           body {         font-family: &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif;         font-size: 14px;         line-height: 20px;">
+<meta property="og:type" content="website">
 <meta property="og:title" content="Xav1er Blog">
-<meta property="og:url" content="https://xav1erw.github.io/archives/2022/index.html">
+<meta property="og:url" content="https://xav1erw.github.io/tool/index.html">
 <meta property="og:site_name" content="Xav1er Blog">
+<meta property="og:description" content="Tool | Xav1er Blog                           body {         font-family: &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif;         font-size: 14px;         line-height: 20px;">
 <meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2022-07-01T03:48:48.864Z">
+<meta property="article:modified_time" content="2022-07-01T03:48:48.864Z">
 <meta property="article:author" content="Xav1er">
 <meta name="twitter:card" content="summary">
     
@@ -45,7 +49,7 @@
 <body>
     <div id="loading" class="active"></div>
 
-    <aside id="menu"  >
+    <aside id="menu" class="hide" >
   <div class="inner flex-row-vertical">
     <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
         <i class="icon icon-lg icon-close"></i>
@@ -71,7 +75,7 @@
               </a>
             </li>
         
-            <li class="waves-block waves-effect active">
+            <li class="waves-block waves-effect">
               <a href="/archives"  >
                 <i class="icon icon-lg icon-archives"></i>
                 Archives
@@ -110,7 +114,7 @@
         <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
           <i class="icon icon-lg icon-navicon"></i>
         </a>
-        <div class="flex-col header-title ellipsis">Archives</div>
+        <div class="flex-col header-title ellipsis"></div>
         
         <div class="search-wrap" id="search-wrap">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
@@ -129,10 +133,10 @@
         
     </div>
 </header>
-<header class="content-header archives-header">
+<header class="content-header page-header">
 
     <div class="container fade-scale">
-        <h1 class="title">Archives</h1>
+        <h1 class="title"></h1>
         <h5 class="subtitle">
             
         </h5>
@@ -142,191 +146,165 @@
 
 
 </header>
-<div class="container body-wrap fade">
-    
 
-    
-            
-            <h3 class="archive-separator">六月, 2022</h3>
-            <div class="waterfall">
-    
+<div class="container body-wrap">
+    <article class="page-article fade" itemprop="blogPage">
+        <div class="post-content page-content" id="page-content" itemprop="pageContent">
+            <!DOCTYPE html>
+<html lang="en">
 
-        <div class="waterfall-item">
-  <article class="article-card archive-article">
-    <div class="post-meta">
-      <time class="post-time" title="2022-06-28 15:53:10" datetime="2022-06-28T07:53:10.000Z"  itemprop="datePublished">2022-06-28</time>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tool | Xav1er Blog</title>
+    <meta property="og:title" content="web 工具">
+    <meta property="og:description" content="常用工具">
+    <meta property="og:site_name" content="Xav1er Blog">
+    <meta property="og:url" content="https://xav1erw.github.io/tool/index.html">
+</head>
+<style>
+    body {
+        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+        font-size: 14px;
+        line-height: 20px;
+        color: #333333;
+        background-color: #ffffff;
+    }
 
-      
-	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Tech/">Tech</a><ul class="article-category-list-child"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Tech/git/">git</a></li></ul></li></ul>
+    #raw-input {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
 
+    .output {
+        width: 50%;
+        overflow: auto;
+        margin-bottom: 20px;
+    }
 
+    .output>span:nth-child(1) {
+        font-weight: bold;
+    }
+</style>
 
+<body>
+    <div>
+        <div id="raw-input">
+            <h1>Tool</h1>
+            <label for="">原始输入
+                <input type="text" id="input" value="">
+            </label>
+        </div>
+        <br>
+        <div id="output" style="display:flex; flex-direction: column; align-items: center;">
+            <h2>输出</h2>
+            <p class="output">
+                <span>md5</span>
+                <span id="md5"></span>
+            </p>
+            <p class="output">
+                <span>sha1</span>
+                <span id="sha1"></span>
+            </p>
+            <p class="output">
+                <span>sha256</span>
+                <span id="sha256"></span>
+            </p>
+            <p class="output">
+                <span>base64</span>
+                <span id="base64"></span>
+            </p>
+        </div>
     </div>
-    
+</body>
+<script src="./crypto-js.min.js"></script>
+<script>
+    var input = document.getElementById('input');
+    var output = document.getElementById('output');
+    var md5 = document.getElementById('md5');
+    var sha1 = document.getElementById('sha1');
+    var sha256 = document.getElementById('sha256');
+    var base64 = document.getElementById('base64');
 
+    input.addEventListener('input', function (e) {
+        var value = e.target.value;
+        md5.innerText = md5_encode(value);
+        sha1.innerText = sha1_encode(value);
+        sha256.innerText = sha256_encode(value);
+        base64.innerText = base64_encode(value);
+    });
 
-  
-    <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/2022/06/28/Tech/git-submodule/">git-submodule</a>
-    </h3>
-  
+    function md5_encode(value) {
+        return CryptoJS.MD5(value).toString();
+    }
 
+    function sha1_encode(value) {
+        return CryptoJS.SHA1(value).toString();
+    }
 
+    function sha256_encode(value) {
+        return CryptoJS.SHA256(value).toString();
+    }
 
-    
-    <div class="post-footer">
+    function base64_encode(value) {
+        return CryptoJS.enc.Base64.stringify(CryptoJS.enc.Utf8.parse(value));
+    }
+</script>
+
+</html>
+        </div>
+
         
-	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/git/" rel="tag">git</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/git-submodule/" rel="tag">git-.submodule</a></li></ul>
 
-    </div>
-    
-  </article>
+        
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;" class="page-reward-btn waves-effect waves-circle waves-light">赏</a>
 </div>
 
-    
-
-        <div class="waterfall-item">
-  <article class="article-card archive-article">
-    <div class="post-meta">
-      <time class="post-time" title="2022-06-20 00:00:00" datetime="2022-06-19T16:00:00.000Z"  itemprop="datePublished">2022-06-20</time>
-
-      
-	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Review/">Review</a></li></ul>
 
 
-
-    </div>
-    
-
-
-  
-    <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/2022/06/20/Review/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%A4%8D%E4%B9%A0/">计算机组成原理复习</a>
-    </h3>
-  
-
-
-
-    
-    <div class="post-footer">
         
-	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%A4%8D%E4%B9%A0/" rel="tag">复习</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/" rel="tag">计算机组成原理</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E8%AF%BE%E5%86%85/" rel="tag">课内</a></li></ul>
 
-    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </article>
     
-  </article>
+<div id="reward" class="page-modal reward-lay">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <h3 class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        谢谢大爷~
+        <i class="icon icon-quote-right"></i>
+    </h3>
+    <div class="reward-content">
+        
+        <div class="reward-code">
+            <img id="rewardCode" src="/img/alipay.jpg" alt="打赏二维码">
+        </div>
+        
+    </div>
 </div>
 
-    
 
-        <div class="waterfall-item">
-  <article class="article-card archive-article">
-    <div class="post-meta">
-      <time class="post-time" title="2022-06-18 00:00:00" datetime="2022-06-17T16:00:00.000Z"  itemprop="datePublished">2022-06-18</time>
-
-      
-	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Review/">Review</a></li></ul>
-
-
-
-    </div>
-    
-
-
-  
-    <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/2022/06/18/Review/%E5%BD%A2%E5%BC%8F%E8%AF%AD%E8%A8%80%E4%B8%8E%E8%87%AA%E5%8A%A8%E6%9C%BA%E5%A4%8D%E4%B9%A0/">形式语言与自动机复习</a>
-    </h3>
-  
-
-
-
-    
-    <div class="post-footer">
-        
-	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%A4%8D%E4%B9%A0/" rel="tag">复习</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%BD%A2%E5%BC%8F%E8%AF%AD%E8%A8%80%E4%B8%8E%E8%87%AA%E5%8A%A8%E6%9C%BA/" rel="tag">形式语言与自动机</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E8%AF%BE%E5%86%85/" rel="tag">课内</a></li></ul>
-
-    </div>
-    
-  </article>
-</div>
-
-    
-
-        <div class="waterfall-item">
-  <article class="article-card archive-article">
-    <div class="post-meta">
-      <time class="post-time" title="2022-06-16 00:00:00" datetime="2022-06-15T16:00:00.000Z"  itemprop="datePublished">2022-06-16</time>
-
-      
-	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Review/">Review</a></li></ul>
-
-
-
-    </div>
-    
-
-
-  
-    <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/2022/06/16/Review/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/">计算机网络期末复习</a>
-    </h3>
-  
-
-
-
-    
-    <div class="post-footer">
-        
-	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%A4%8D%E4%B9%A0/" rel="tag">复习</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" rel="tag">计算机网络</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E8%AF%BE%E5%86%85/" rel="tag">课内</a></li></ul>
-
-    </div>
-    
-  </article>
-</div>
-
-    
-            </div> 
-            <h3 class="archive-separator">三月, 2022</h3>
-            <div class="waterfall">
-    
-
-        <div class="waterfall-item">
-  <article class="article-card archive-article">
-    <div class="post-meta">
-      <time class="post-time" title="2022-03-25 00:00:00" datetime="2022-03-24T16:00:00.000Z"  itemprop="datePublished">2022-03-25</time>
-
-      
-	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Tech/">Tech</a><ul class="article-category-list-child"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Tech/%E5%89%8D%E7%AB%AF/">前端</a></li></ul></li></ul>
-
-
-
-    </div>
-    
-
-
-  
-    <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/2022/03/25/Tech/React/">React学习笔记</a>
-    </h3>
-  
-
-
-
-    
-    <div class="post-footer">
-        
-	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/React/" rel="tag">React</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/" rel="tag">javascript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%89%8D%E7%AB%AF/" rel="tag">前端</a></li></ul>
-
-    </div>
-    
-  </article>
-</div>
-
-    
-    </div>
-
-    
 </div>
 
         <footer class="footer">
@@ -359,7 +337,7 @@
 <div class="global-share" id="globalShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://xav1erw.github.io/archives/2022/&title=Xav1er Blog&pic=https://xav1erw.github.io/img/avatar.jpg" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://xav1erw.github.io/tool/&title=Xav1er Blog&pic=https://xav1erw.github.io/img/avatar.jpg" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -369,22 +347,22 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://xav1erw.github.io/archives/2022/&title=Xav1er Blog&source=" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://xav1erw.github.io/tool/&title=Xav1er Blog&source=" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
       <li>
-        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://xav1erw.github.io/archives/2022/" data-title=" Facebook">
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://xav1erw.github.io/tool/" data-title=" Facebook">
           <i class="icon icon-facebook"></i>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=Xav1er Blog&url=https://xav1erw.github.io/archives/2022/&via=https://xav1erw.github.io" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=Xav1er Blog&url=https://xav1erw.github.io/tool/&via=https://xav1erw.github.io" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
       <li>
-        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://xav1erw.github.io/archives/2022/" data-title=" Google+">
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://xav1erw.github.io/tool/" data-title=" Google+">
           <i class="icon icon-google-plus"></i>
         </a>
       </li>
@@ -395,7 +373,7 @@
 <div class="page-modal wx-share" id="wxShare">
     <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
-    <img src="//api.qrserver.com/v1/create-qr-code/?data=https://xav1erw.github.io/archives/2022/" alt="微信分享二维码">
+    <img src="//api.qrserver.com/v1/create-qr-code/?data=https://xav1erw.github.io/tool/" alt="微信分享二维码">
 </div>
 
 
@@ -410,7 +388,7 @@
 
     <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
 <script>
-var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
+var BLOG = { ROOT: '/', SHARE: true, REWARD: true };
 
 
 </script>
