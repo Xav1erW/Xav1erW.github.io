@@ -6,7 +6,7 @@
   <link href="https://xav1erw.github.io/atom.xml" rel="self"/>
   
   <link href="https://xav1erw.github.io/"/>
-  <updated>2022-09-18T06:38:46.200Z</updated>
+  <updated>2022-09-21T13:31:14.509Z</updated>
   <id>https://xav1erw.github.io/</id>
   
   <author>
@@ -15,6 +15,37 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>3D-CNN学习</title>
+    <link href="https://xav1erw.github.io/2022/09/21/ML/3D-CNN/"/>
+    <id>https://xav1erw.github.io/2022/09/21/ML/3D-CNN/</id>
+    <published>2022-09-21T12:42:00.000Z</published>
+    <updated>2022-09-21T13:31:14.509Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="d-cnn学习">3D-CNN学习</h1><h2 id="d卷积">2D卷积</h2><p>传统的2D的 <strong>卷积神经网络(CNN)</strong> 使用一个卷积核在2D空间上滑动卷积操作</p><figure class="image-bubble">                <div class="img-lightbox">                    <div class="overlay"></div>                    <img src="https://raw.githubusercontent.com/Xav1erW/blog-imgs/master/202209212047851.gif" alt="2D单通道卷积" title="">                </div>                <div class="image-caption">2D单通道卷积</div>            </figure><p>如果是多通道卷积，那么卷积核通道和图片通道数是一致的，并且 <strong>不同通道的卷积核参数不同</strong></p><figure class="image-bubble">                <div class="img-lightbox">                    <div class="overlay"></div>                    <img src="https://raw.githubusercontent.com/Xav1erW/blog-imgs/master/202209212050198.gif" alt="2D多通道卷积" title="">                </div>                <div class="image-caption">2D多通道卷积</div>            </figure><p>通过2D的卷积，我们可以感受出，卷积操作实际上是一个卷积核在一个空间中滑动的，滑动重合的部分进行乘weight并加上bias的操作</p><p>2D的卷积是在平面空间进行上述操作的，那么，能否将上述操作推广到更广的空间中？</p><h2 id="d卷积-1">3D卷积</h2><p>答案是可以的。</p><figure class="image-bubble">                <div class="img-lightbox">                    <div class="overlay"></div>                    <img src="https://raw.githubusercontent.com/Xav1erW/blog-imgs/master/202209212108630.png" alt="3D-CNN" title="">                </div>                <div class="image-caption">3D-CNN</div>            </figure><p>当我们有很多层的图片 （比如视频中的连续帧）时，将这些二维数据叠在一起，形成一个三维结构，通过在三维空间移动这样的三维卷积核并进行卷积计算，得到卷积的结果，如上图。</p><figure class="image-bubble">                <div class="img-lightbox">                    <div class="overlay"></div>                    <img src="https://raw.githubusercontent.com/Xav1erW/blog-imgs/master/202209212130189.gif" alt="3D-CNN-animation" title="">                </div>                <div class="image-caption">3D-CNN-animation</div>            </figure><p>如果传入的为拥有多通道的图片序列（如RGB图片），那么上述卷积核每个位置还要在通道方向上为每个通道拆分出一层，可以理解为 <strong>分别对每个通道进行三维卷积操作</strong></p><h3 id="与二维卷积的区别">与二维卷积的区别</h3><ol type="1"><li>首先卷积核为3维的。虽然多通道的二维卷积中卷积核也可以看成有多个第三维度的层，但这些层在卷积操作中互相独立不产生影响；而三维卷积中卷积核拥有的深度(depth)维度之间会在操作中有加和操作，最终转化为输出结果的一个数</li><li>滑动空间是三维空间。3D卷积会在深度方向上滑动并卷积，而2D卷积不存在深度方向。</li></ol><p><strong>参考：</strong></p><blockquote><p><a href="https://juejin.cn/post/6844903957307850759">2D-CNN和3D-CNN计算 - 掘金 (juejin.cn)</a><br /><a href="https://www.kaggle.com/code/shivamb/3d-convolutions-understanding-use-case/notebook">3D Convolutions : Understanding + Use Case | Kaggle</a></p><p><a href="https://medium.com/apache-mxnet/1d-3d-convolutions-explained-with-ms-excel-5f88c0f35941">1D &amp; 3D Convolutions explained with… MS Excel! | by Thom Lane | Apache MXNet | Medium</a></p></blockquote>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;d-cnn学习&quot;&gt;3D-CNN学习&lt;/h1&gt;
+&lt;h2 id=&quot;d卷积&quot;&gt;2D卷积&lt;/h2&gt;
+&lt;p&gt;传统的2D的 &lt;strong&gt;卷积神经网络(CNN)&lt;/strong&gt; 使用一个卷积核在2D空间上滑动卷积操作&lt;/p&gt;
+&lt;figure class=&quot;image</summary>
+      
+    
+    
+    
+    <category term="ML" scheme="https://xav1erw.github.io/categories/ML/"/>
+    
+    
+    <category term="Deep Learning" scheme="https://xav1erw.github.io/tags/Deep-Learning/"/>
+    
+    <category term="CV" scheme="https://xav1erw.github.io/tags/CV/"/>
+    
+    <category term="CNN" scheme="https://xav1erw.github.io/tags/CNN/"/>
+    
+  </entry>
   
   <entry>
     <title>操作系统lab问题总结</title>
