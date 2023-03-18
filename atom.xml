@@ -6,7 +6,7 @@
   <link href="https://xav1erw.github.io/atom.xml" rel="self"/>
   
   <link href="https://xav1erw.github.io/"/>
-  <updated>2022-09-21T13:31:14.509Z</updated>
+  <updated>2023-03-18T07:54:15.070Z</updated>
   <id>https://xav1erw.github.io/</id>
   
   <author>
@@ -15,6 +15,36 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>BUPT 智能交互机器人 Roban和仿真环境</title>
+    <link href="https://xav1erw.github.io/2023/03/18/Course/%E6%9C%BA%E5%99%A8%E4%BA%BA/"/>
+    <id>https://xav1erw.github.io/2023/03/18/Course/%E6%9C%BA%E5%99%A8%E4%BA%BA/</id>
+    <published>2023-03-17T16:00:00.000Z</published>
+    <updated>2023-03-18T07:54:15.070Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="bupt-智能交互机器人">BUPT 智能交互机器人</h1><h2 id="场景搭建">场景搭建</h2><p><strong>很重要，如果设置不对运行时会报错</strong></p><h3 id="机器人">机器人</h3><p>首先是机器人的模型，需要从别的有机器人的场景中复制，建议从 <code>~/robot_ros_application/catkin_ws/src/bodyhub/vrep/Roban.ttt</code> 这个场景中复制，这个场景可能是最基本的示例场景</p><p>使用CoppeliaSim打开该场景，把场景中的Talos物体完全展开，按住shift加点击，全部选中它的子实体（下图只选了一点）</p><figure class="image-bubble">                <div class="img-lightbox">                    <div class="overlay"></div>                    <img src="https://raw.githubusercontent.com/Xav1erW/blog-imgs/master/202303181552819.png" alt="image-20230317180725215" title="">                </div>                <div class="image-caption">image-20230317180725215</div>            </figure><p>复制到自己新建的场景中。复制之后机器人的轴会凸出来（红色的）不知道如何解决</p><p>复制之后，双击打开机器人的仿真环境代码，检查和之前场景(Roban.ttt)中的代码是否一致，这个代码应该是规定了仿真模型如何接受ROS中的信号并且做出对应动作的</p><figure class="image-bubble">                <div class="img-lightbox">                    <div class="overlay"></div>                    <img src="https://raw.githubusercontent.com/Xav1erW/blog-imgs/master/202303181552379.png" alt="image-20230317180915631" title="">                </div>                <div class="image-caption">image-20230317180915631</div>            </figure><h3 id="场景">场景</h3><p><strong>很必要，之前就是因为这个没能跑起来</strong></p><p>除了机器人有相应的代码，场景也有代码，可能也是处理与ROS通信相关内容的，自建的场景是不带这部分的，需要从Roban.ttt中复制</p><p>双击roban.ttt中场景代码，查看代码并复制</p><figure class="image-bubble">                <div class="img-lightbox">                    <div class="overlay"></div>                    <img src="https://raw.githubusercontent.com/Xav1erW/blog-imgs/master/202303181552339.png" alt="image-20230317181212232" title="">                </div>                <div class="image-caption">image-20230317181212232</div>            </figure><p><img src="https://raw.githubusercontent.com/Xav1erW/blog-imgs/master/202303181552464.png" alt="image-20230317181224479" style="zoom:50%;" /></p><p>之后双击自己新建场景中的代码，进行替换</p><p>物理模拟可能需要替换成Newton</p><figure class="image-bubble">                <div class="img-lightbox">                    <div class="overlay"></div>                    <img src="https://raw.githubusercontent.com/Xav1erW/blog-imgs/master/202303181552337.png" alt="image-20230317181917755" title="">                </div>                <div class="image-caption">image-20230317181917755</div>            </figure><h2 id="运行">运行</h2><h3 id="ros-interface">ROS Interface</h3><p>CoppeliaSim如果需要和ROS通信，需要一个 <code>libsimExtROSInterface.so</code> 动态链接库，但是好像镜像中给的CoppeliaSim没有，重新编译这个库困难重重，因此可以重新从软件官网下载一个新的</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># download.sh</span></span><br><span class="line">wget https://www.coppeliarobotics.com/files/CoppeliaSim_Edu_V4_1_0_Ubuntu16_04.tar.xz</span><br><span class="line"></span><br><span class="line">tar -xvJf CoppeliaSim_Edu_V4_1_0_Ubuntu16_04.tar.xz</span><br><span class="line"></span><br><span class="line"><span class="built_in">rm</span> -rf CoppeliaSim_Edu    <span class="comment"># 删除前也可以先 cp CoppeliaSim_Edu CoppeliaSim_Edu.bak 复制一遍备份</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">mv</span> CoppeliaSim_Edu_V4_1_0_Ubuntu16_04 CoppeliaSim_Edu</span><br></pre></td></tr></table></figure><p>以上脚本下载的是Ubuntu16.04的4.1版本</p><h3 id="运行机器人代码">运行机器人代码</h3><p>根据给出的示例，仿照 <code>complete.py</code> 中方式运行</p><ol type="1"><li><p>所有工作开始前，要先运行 <code>roscore</code> 开启服务（？可能是http）</p></li><li><p>运行 <code>~/CoppeliaSim_Edu</code> 中的 <code>coppeliaSim.sh</code> 打开仿真软件</p><ul><li>如果要直接打开特定场景，使用 <code>coppeliaSim.sh scene.ttt</code> 其中 <code>scene.ttt</code> 为场景文件路径</li></ul></li><li><p>运行<code>~/robot_ros_application/catkin_ws/src/ros_actions_node/scripts/game/2022/normal_sim_game/ai_innovative_roban_sim/scripts/auto_run</code> 中的<code>node_start.sh</code> 该脚本内容如下</p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># node_start.sh</span></span><br><span class="line"><span class="built_in">sleep</span> 3s</span><br><span class="line">rosrun  ik_module ik_module_node &amp;</span><br><span class="line"></span><br><span class="line">. /home/fan/robot_ros_application/catkin_ws/devel/setup.bash</span><br><span class="line"><span class="built_in">echo</span> <span class="string">&quot;121&quot;</span> | sudo -S bash bodyhub.sh &amp;</span><br></pre></td></tr></table></figure><p>首先第三行使用rosrun运行 <code>ik_module_node</code> ，之后第五行设置catkin环境，该语句可能执行不成功，在前面加上bash变成 <code>bash /home/fan/robot_ros_application/catkin_ws/devel/setup.bash</code></p><p>第六行使用sudo特权运行 <code>bodyhub.sh</code></p><p><code>bodyhub.sh</code> 中使用roslaunch运行了bodyhub</p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># bodyhub.sh</span></span><br><span class="line">roslaunch bodyhub bodyhub.launch sim:=True</span><br></pre></td></tr></table></figure><p>这两项可能是开启了python程序中给机器人的指令和ros以及仿真环境的通信渠道？</p></li><li><p>使用 <code>python filename.py</code> 运行想要运行的python程序。</p></li><li><p>给的示例程序中，依赖到了 <code>pyaudio</code> 这个库，需要自行pip安装</p></li></ol><p>运行python的时候有可能遇到问题，找不到 <code>lejufunc</code> ，需要创建符号链接。</p><p>在 <code>~/robot_ros_application/catkin_ws/src/ros_actions_node/scripts</code> 中执行命令</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">ln</span> -s ../../leju_lib_pkg/src/lejufunc/ lejufunc</span><br></pre></td></tr></table></figure><p>还有一个符号链接 <code>lejulib.py</code> 指向 <code>../../leju_lib_pkg/lejulib.py</code> 也通过这种方法创建</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;bupt-智能交互机器人&quot;&gt;BUPT 智能交互机器人&lt;/h1&gt;
+&lt;h2 id=&quot;场景搭建&quot;&gt;场景搭建&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;很重要，如果设置不对运行时会报错&lt;/strong&gt;&lt;/p&gt;
+&lt;h3 id=&quot;机器人&quot;&gt;机器人&lt;/h3&gt;
+&lt;p&gt;首先是机器人</summary>
+      
+    
+    
+    
+    <category term="Course" scheme="https://xav1erw.github.io/categories/Course/"/>
+    
+    
+    <category term="课内" scheme="https://xav1erw.github.io/tags/%E8%AF%BE%E5%86%85/"/>
+    
+    <category term="机器人" scheme="https://xav1erw.github.io/tags/%E6%9C%BA%E5%99%A8%E4%BA%BA/"/>
+    
+  </entry>
   
   <entry>
     <title>3D-CNN学习</title>
