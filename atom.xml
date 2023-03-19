@@ -3,11 +3,11 @@
   <title>Xav1er Blog</title>
   
   
-  <link href="https://xav1erw.github.io/atom.xml" rel="self"/>
+  <link href="https://blog.x-wang.tech/atom.xml" rel="self"/>
   
-  <link href="https://xav1erw.github.io/"/>
+  <link href="https://blog.x-wang.tech/"/>
   <updated>2023-03-18T07:54:15.070Z</updated>
-  <id>https://xav1erw.github.io/</id>
+  <id>https://blog.x-wang.tech/</id>
   
   <author>
     <name>Xav1er</name>
@@ -18,8 +18,8 @@
   
   <entry>
     <title>BUPT 智能交互机器人 Roban和仿真环境</title>
-    <link href="https://xav1erw.github.io/2023/03/18/Course/%E6%9C%BA%E5%99%A8%E4%BA%BA/"/>
-    <id>https://xav1erw.github.io/2023/03/18/Course/%E6%9C%BA%E5%99%A8%E4%BA%BA/</id>
+    <link href="https://blog.x-wang.tech/2023/03/18/Course/%E6%9C%BA%E5%99%A8%E4%BA%BA/"/>
+    <id>https://blog.x-wang.tech/2023/03/18/Course/%E6%9C%BA%E5%99%A8%E4%BA%BA/</id>
     <published>2023-03-17T16:00:00.000Z</published>
     <updated>2023-03-18T07:54:15.070Z</updated>
     
@@ -37,19 +37,19 @@
     
     
     
-    <category term="Course" scheme="https://xav1erw.github.io/categories/Course/"/>
+    <category term="Course" scheme="https://blog.x-wang.tech/categories/Course/"/>
     
     
-    <category term="课内" scheme="https://xav1erw.github.io/tags/%E8%AF%BE%E5%86%85/"/>
+    <category term="课内" scheme="https://blog.x-wang.tech/tags/%E8%AF%BE%E5%86%85/"/>
     
-    <category term="机器人" scheme="https://xav1erw.github.io/tags/%E6%9C%BA%E5%99%A8%E4%BA%BA/"/>
+    <category term="机器人" scheme="https://blog.x-wang.tech/tags/%E6%9C%BA%E5%99%A8%E4%BA%BA/"/>
     
   </entry>
   
   <entry>
     <title>3D-CNN学习</title>
-    <link href="https://xav1erw.github.io/2022/09/21/ML/3D-CNN/"/>
-    <id>https://xav1erw.github.io/2022/09/21/ML/3D-CNN/</id>
+    <link href="https://blog.x-wang.tech/2022/09/21/ML/3D-CNN/"/>
+    <id>https://blog.x-wang.tech/2022/09/21/ML/3D-CNN/</id>
     <published>2022-09-21T12:42:00.000Z</published>
     <updated>2022-09-21T13:31:14.509Z</updated>
     
@@ -66,21 +66,21 @@
     
     
     
-    <category term="ML" scheme="https://xav1erw.github.io/categories/ML/"/>
+    <category term="ML" scheme="https://blog.x-wang.tech/categories/ML/"/>
     
     
-    <category term="Deep Learning" scheme="https://xav1erw.github.io/tags/Deep-Learning/"/>
+    <category term="Deep Learning" scheme="https://blog.x-wang.tech/tags/Deep-Learning/"/>
     
-    <category term="CV" scheme="https://xav1erw.github.io/tags/CV/"/>
+    <category term="CV" scheme="https://blog.x-wang.tech/tags/CV/"/>
     
-    <category term="CNN" scheme="https://xav1erw.github.io/tags/CNN/"/>
+    <category term="CNN" scheme="https://blog.x-wang.tech/tags/CNN/"/>
     
   </entry>
   
   <entry>
     <title>操作系统lab问题总结</title>
-    <link href="https://xav1erw.github.io/2022/09/17/Course/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-lab1/"/>
-    <id>https://xav1erw.github.io/2022/09/17/Course/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-lab1/</id>
+    <link href="https://blog.x-wang.tech/2022/09/17/Course/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-lab1/"/>
+    <id>https://blog.x-wang.tech/2022/09/17/Course/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-lab1/</id>
     <published>2022-09-16T16:00:00.000Z</published>
     <updated>2022-09-18T06:38:46.200Z</updated>
     
@@ -99,19 +99,19 @@
     
     
     
-    <category term="Course" scheme="https://xav1erw.github.io/categories/Course/"/>
+    <category term="Course" scheme="https://blog.x-wang.tech/categories/Course/"/>
     
     
-    <category term="课内" scheme="https://xav1erw.github.io/tags/%E8%AF%BE%E5%86%85/"/>
+    <category term="课内" scheme="https://blog.x-wang.tech/tags/%E8%AF%BE%E5%86%85/"/>
     
-    <category term="操作系统" scheme="https://xav1erw.github.io/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"/>
+    <category term="操作系统" scheme="https://blog.x-wang.tech/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"/>
     
   </entry>
   
   <entry>
     <title>python判断黑白图像</title>
-    <link href="https://xav1erw.github.io/2022/07/03/Tech/python%E5%88%A4%E6%96%AD%E9%BB%91%E7%99%BD%E5%9B%BE%E5%83%8F/"/>
-    <id>https://xav1erw.github.io/2022/07/03/Tech/python%E5%88%A4%E6%96%AD%E9%BB%91%E7%99%BD%E5%9B%BE%E5%83%8F/</id>
+    <link href="https://blog.x-wang.tech/2022/07/03/Tech/python%E5%88%A4%E6%96%AD%E9%BB%91%E7%99%BD%E5%9B%BE%E5%83%8F/"/>
+    <id>https://blog.x-wang.tech/2022/07/03/Tech/python%E5%88%A4%E6%96%AD%E9%BB%91%E7%99%BD%E5%9B%BE%E5%83%8F/</id>
     <published>2022-07-03T04:15:04.000Z</published>
     <updated>2022-07-03T11:14:22.704Z</updated>
     
@@ -126,23 +126,23 @@
     
     
     
-    <category term="Tech" scheme="https://xav1erw.github.io/categories/Tech/"/>
+    <category term="Tech" scheme="https://blog.x-wang.tech/categories/Tech/"/>
     
-    <category term="snippet" scheme="https://xav1erw.github.io/categories/Tech/snippet/"/>
+    <category term="snippet" scheme="https://blog.x-wang.tech/categories/Tech/snippet/"/>
     
     
-    <category term="图像处理" scheme="https://xav1erw.github.io/tags/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86/"/>
+    <category term="图像处理" scheme="https://blog.x-wang.tech/tags/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86/"/>
     
-    <category term="python" scheme="https://xav1erw.github.io/tags/python/"/>
+    <category term="python" scheme="https://blog.x-wang.tech/tags/python/"/>
     
-    <category term="snippet" scheme="https://xav1erw.github.io/tags/snippet/"/>
+    <category term="snippet" scheme="https://blog.x-wang.tech/tags/snippet/"/>
     
   </entry>
   
   <entry>
     <title>git-submodule</title>
-    <link href="https://xav1erw.github.io/2022/06/28/Tech/git-submodule/"/>
-    <id>https://xav1erw.github.io/2022/06/28/Tech/git-submodule/</id>
+    <link href="https://blog.x-wang.tech/2022/06/28/Tech/git-submodule/"/>
+    <id>https://blog.x-wang.tech/2022/06/28/Tech/git-submodule/</id>
     <published>2022-06-28T07:53:10.000Z</published>
     <updated>2022-06-28T07:53:10.512Z</updated>
     
@@ -158,21 +158,21 @@
     
     
     
-    <category term="Tech" scheme="https://xav1erw.github.io/categories/Tech/"/>
+    <category term="Tech" scheme="https://blog.x-wang.tech/categories/Tech/"/>
     
-    <category term="git" scheme="https://xav1erw.github.io/categories/Tech/git/"/>
+    <category term="git" scheme="https://blog.x-wang.tech/categories/Tech/git/"/>
     
     
-    <category term="git" scheme="https://xav1erw.github.io/tags/git/"/>
+    <category term="git" scheme="https://blog.x-wang.tech/tags/git/"/>
     
-    <category term="git-.submodule" scheme="https://xav1erw.github.io/tags/git-submodule/"/>
+    <category term="git-.submodule" scheme="https://blog.x-wang.tech/tags/git-submodule/"/>
     
   </entry>
   
   <entry>
     <title>计算机组成原理复习</title>
-    <link href="https://xav1erw.github.io/2022/06/20/Review/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%A4%8D%E4%B9%A0/"/>
-    <id>https://xav1erw.github.io/2022/06/20/Review/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%A4%8D%E4%B9%A0/</id>
+    <link href="https://blog.x-wang.tech/2022/06/20/Review/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%A4%8D%E4%B9%A0/"/>
+    <id>https://blog.x-wang.tech/2022/06/20/Review/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%A4%8D%E4%B9%A0/</id>
     <published>2022-06-19T16:00:00.000Z</published>
     <updated>2022-06-21T14:29:42.339Z</updated>
     
@@ -192,21 +192,21 @@
     
     
     
-    <category term="Review" scheme="https://xav1erw.github.io/categories/Review/"/>
+    <category term="Review" scheme="https://blog.x-wang.tech/categories/Review/"/>
     
     
-    <category term="课内" scheme="https://xav1erw.github.io/tags/%E8%AF%BE%E5%86%85/"/>
+    <category term="课内" scheme="https://blog.x-wang.tech/tags/%E8%AF%BE%E5%86%85/"/>
     
-    <category term="复习" scheme="https://xav1erw.github.io/tags/%E5%A4%8D%E4%B9%A0/"/>
+    <category term="复习" scheme="https://blog.x-wang.tech/tags/%E5%A4%8D%E4%B9%A0/"/>
     
-    <category term="计算机组成原理" scheme="https://xav1erw.github.io/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/"/>
+    <category term="计算机组成原理" scheme="https://blog.x-wang.tech/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/"/>
     
   </entry>
   
   <entry>
     <title>形式语言与自动机复习</title>
-    <link href="https://xav1erw.github.io/2022/06/18/Review/%E5%BD%A2%E5%BC%8F%E8%AF%AD%E8%A8%80%E4%B8%8E%E8%87%AA%E5%8A%A8%E6%9C%BA%E5%A4%8D%E4%B9%A0/"/>
-    <id>https://xav1erw.github.io/2022/06/18/Review/%E5%BD%A2%E5%BC%8F%E8%AF%AD%E8%A8%80%E4%B8%8E%E8%87%AA%E5%8A%A8%E6%9C%BA%E5%A4%8D%E4%B9%A0/</id>
+    <link href="https://blog.x-wang.tech/2022/06/18/Review/%E5%BD%A2%E5%BC%8F%E8%AF%AD%E8%A8%80%E4%B8%8E%E8%87%AA%E5%8A%A8%E6%9C%BA%E5%A4%8D%E4%B9%A0/"/>
+    <id>https://blog.x-wang.tech/2022/06/18/Review/%E5%BD%A2%E5%BC%8F%E8%AF%AD%E8%A8%80%E4%B8%8E%E8%87%AA%E5%8A%A8%E6%9C%BA%E5%A4%8D%E4%B9%A0/</id>
     <published>2022-06-17T16:00:00.000Z</published>
     <updated>2022-06-22T01:41:23.451Z</updated>
     
@@ -221,21 +221,21 @@
     
     
     
-    <category term="Review" scheme="https://xav1erw.github.io/categories/Review/"/>
+    <category term="Review" scheme="https://blog.x-wang.tech/categories/Review/"/>
     
     
-    <category term="形式语言与自动机" scheme="https://xav1erw.github.io/tags/%E5%BD%A2%E5%BC%8F%E8%AF%AD%E8%A8%80%E4%B8%8E%E8%87%AA%E5%8A%A8%E6%9C%BA/"/>
+    <category term="形式语言与自动机" scheme="https://blog.x-wang.tech/tags/%E5%BD%A2%E5%BC%8F%E8%AF%AD%E8%A8%80%E4%B8%8E%E8%87%AA%E5%8A%A8%E6%9C%BA/"/>
     
-    <category term="课内" scheme="https://xav1erw.github.io/tags/%E8%AF%BE%E5%86%85/"/>
+    <category term="课内" scheme="https://blog.x-wang.tech/tags/%E8%AF%BE%E5%86%85/"/>
     
-    <category term="复习" scheme="https://xav1erw.github.io/tags/%E5%A4%8D%E4%B9%A0/"/>
+    <category term="复习" scheme="https://blog.x-wang.tech/tags/%E5%A4%8D%E4%B9%A0/"/>
     
   </entry>
   
   <entry>
     <title>计算机网络期末复习</title>
-    <link href="https://xav1erw.github.io/2022/06/16/Review/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/"/>
-    <id>https://xav1erw.github.io/2022/06/16/Review/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/</id>
+    <link href="https://blog.x-wang.tech/2022/06/16/Review/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/"/>
+    <id>https://blog.x-wang.tech/2022/06/16/Review/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/</id>
     <published>2022-06-15T16:00:00.000Z</published>
     <updated>2022-06-22T01:46:09.776Z</updated>
     
@@ -253,21 +253,21 @@
     
     
     
-    <category term="Review" scheme="https://xav1erw.github.io/categories/Review/"/>
+    <category term="Review" scheme="https://blog.x-wang.tech/categories/Review/"/>
     
     
-    <category term="课内" scheme="https://xav1erw.github.io/tags/%E8%AF%BE%E5%86%85/"/>
+    <category term="课内" scheme="https://blog.x-wang.tech/tags/%E8%AF%BE%E5%86%85/"/>
     
-    <category term="复习" scheme="https://xav1erw.github.io/tags/%E5%A4%8D%E4%B9%A0/"/>
+    <category term="复习" scheme="https://blog.x-wang.tech/tags/%E5%A4%8D%E4%B9%A0/"/>
     
-    <category term="计算机网络" scheme="https://xav1erw.github.io/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/"/>
+    <category term="计算机网络" scheme="https://blog.x-wang.tech/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/"/>
     
   </entry>
   
   <entry>
     <title>React学习笔记</title>
-    <link href="https://xav1erw.github.io/2022/03/25/Tech/React/"/>
-    <id>https://xav1erw.github.io/2022/03/25/Tech/React/</id>
+    <link href="https://blog.x-wang.tech/2022/03/25/Tech/React/"/>
+    <id>https://blog.x-wang.tech/2022/03/25/Tech/React/</id>
     <published>2022-03-24T16:00:00.000Z</published>
     <updated>2022-06-22T01:43:50.656Z</updated>
     
@@ -285,16 +285,16 @@
     
     
     
-    <category term="Tech" scheme="https://xav1erw.github.io/categories/Tech/"/>
+    <category term="Tech" scheme="https://blog.x-wang.tech/categories/Tech/"/>
     
-    <category term="前端" scheme="https://xav1erw.github.io/categories/Tech/%E5%89%8D%E7%AB%AF/"/>
+    <category term="前端" scheme="https://blog.x-wang.tech/categories/Tech/%E5%89%8D%E7%AB%AF/"/>
     
     
-    <category term="React" scheme="https://xav1erw.github.io/tags/React/"/>
+    <category term="React" scheme="https://blog.x-wang.tech/tags/React/"/>
     
-    <category term="javascript" scheme="https://xav1erw.github.io/tags/javascript/"/>
+    <category term="javascript" scheme="https://blog.x-wang.tech/tags/javascript/"/>
     
-    <category term="前端" scheme="https://xav1erw.github.io/tags/%E5%89%8D%E7%AB%AF/"/>
+    <category term="前端" scheme="https://blog.x-wang.tech/tags/%E5%89%8D%E7%AB%AF/"/>
     
   </entry>
   
