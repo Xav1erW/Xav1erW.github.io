@@ -23,15 +23,16 @@
     
     
     <meta name="keywords" content="课内,复习,计算机视觉">
-    <meta name="description" content="滤波 高斯核的性质：  使用小方差的高斯核卷积多次和一个大的方差的高斯核卷积效果一样，比如使用方差为\(\sigma\) 的高斯核卷积两次，和使用方差为\(\sqrt 2\sigma\) 的高斯核卷积一次效果一样。上述关系类似勾股定理，第一次使用 \(m\sigma\)卷积，第二次使用\(n\sigma\)卷积，结果相当于使用\(\sqrt{m^2+n^2}\sigma\)卷积 高斯卷积核">
+    <meta name="description" content="计算机视觉 滤波 高斯核的性质：  使用小方差的高斯核卷积多次和一个大的方差的高斯核卷积效果一样，比如使用方差为\(\sigma\) 的高斯核卷积两次，和使用方差为\(\sqrt 2\sigma\) 的高斯核卷积一次效果一样。上述关系类似勾股定理，第一次使用 \(m\sigma\)卷积，第二次使用\(n\sigma\)卷积，结果相当于使用\(\sqrt{m^2+n^2}\sigma\)卷积">
 <meta property="og:type" content="article">
 <meta property="og:title" content="计算机视觉">
 <meta property="og:url" content="https://blog.x-wang.tech/2023/05/31/Review/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%86%E8%A7%89%E5%A4%8D%E4%B9%A0/index.html">
 <meta property="og:site_name" content="Xav1er Blog">
-<meta property="og:description" content="滤波 高斯核的性质：  使用小方差的高斯核卷积多次和一个大的方差的高斯核卷积效果一样，比如使用方差为\(\sigma\) 的高斯核卷积两次，和使用方差为\(\sqrt 2\sigma\) 的高斯核卷积一次效果一样。上述关系类似勾股定理，第一次使用 \(m\sigma\)卷积，第二次使用\(n\sigma\)卷积，结果相当于使用\(\sqrt{m^2+n^2}\sigma\)卷积 高斯卷积核">
+<meta property="og:description" content="计算机视觉 滤波 高斯核的性质：  使用小方差的高斯核卷积多次和一个大的方差的高斯核卷积效果一样，比如使用方差为\(\sigma\) 的高斯核卷积两次，和使用方差为\(\sqrt 2\sigma\) 的高斯核卷积一次效果一样。上述关系类似勾股定理，第一次使用 \(m\sigma\)卷积，第二次使用\(n\sigma\)卷积，结果相当于使用\(\sqrt{m^2+n^2}\sigma\)卷积">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://raw.githubusercontent.com/Xav1erW/blog-imgs/master/202305311453930.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/Xav1erW/blog-imgs/master/202305311454052.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/Xav1erW/blog-imgs/master/202305311845235.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/Xav1erW/blog-imgs/master/202305300829465.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/Xav1erW/blog-imgs/master/202305311448309.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/Xav1erW/blog-imgs/master/202305311458533.png">
@@ -51,8 +52,13 @@
 <meta property="og:image" content="https://raw.githubusercontent.com/Xav1erW/blog-imgs/master/202305311706603.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/Xav1erW/blog-imgs/master/202305311706876.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/Xav1erW/blog-imgs/master/202305311713622.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/Xav1erW/blog-imgs/master/202305311835755.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/Xav1erW/blog-imgs/master/202305311902031.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/Xav1erW/blog-imgs/master/202305311903858.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/Xav1erW/blog-imgs/master/202305311909508.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/Xav1erW/blog-imgs/master/202305311912179.png">
 <meta property="article:published_time" content="2023-05-30T16:00:00.000Z">
-<meta property="article:modified_time" content="2023-05-31T10:34:14.578Z">
+<meta property="article:modified_time" content="2023-05-31T11:24:30.009Z">
 <meta property="article:author" content="Xav1er">
 <meta property="article:tag" content="课内">
 <meta property="article:tag" content="复习">
@@ -185,7 +191,7 @@
     <aside class="post-widget">
         <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#%E6%BB%A4%E6%B3%A2"><span class="post-toc-number">1.</span> <span class="post-toc-text">滤波</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#%E8%BE%B9%E7%BC%98"><span class="post-toc-number">2.</span> <span class="post-toc-text">边缘</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#%E6%9C%80%E5%B0%8F%E4%BA%8C%E4%B9%98ransac"><span class="post-toc-number">3.</span> <span class="post-toc-text">最小二乘&amp;RANSAC</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#ransac"><span class="post-toc-number">3.1.</span> <span class="post-toc-text">RANSAC</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#%E9%9C%8D%E5%A4%AB%E5%8F%98%E6%8D%A2"><span class="post-toc-number">4.</span> <span class="post-toc-text">霍夫变换</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E5%99%AA%E5%A3%B0%E5%A4%84%E7%90%86"><span class="post-toc-number">4.1.</span> <span class="post-toc-text">噪声处理</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#harris%E8%A7%92%E7%82%B9"><span class="post-toc-number">5.</span> <span class="post-toc-text">Harris角点</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#siftblob%E6%A3%80%E6%B5%8B"><span class="post-toc-number">6.</span> <span class="post-toc-text">SIFT(Blob检测)</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#sift"><span class="post-toc-number">6.1.</span> <span class="post-toc-text">SIFT</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E6%9C%89%E5%85%B3%E4%B8%8D%E5%8F%98%E6%80%A7"><span class="post-toc-number">6.1.1.</span> <span class="post-toc-text">有关不变性</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#sift%E7%89%B9%E5%BE%81%E5%8C%B9%E9%85%8D"><span class="post-toc-number">6.2.</span> <span class="post-toc-text">SIFT特征匹配</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#%E7%BA%B9%E7%90%86"><span class="post-toc-number">7.</span> <span class="post-toc-text">纹理</span></a></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%86%E8%A7%89"><span class="post-toc-number">1.</span> <span class="post-toc-text">计算机视觉</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E6%BB%A4%E6%B3%A2"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">滤波</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E8%BE%B9%E7%BC%98"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">边缘</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E6%9C%80%E5%B0%8F%E4%BA%8C%E4%B9%98ransac"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">最小二乘&amp;RANSAC</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#ransac"><span class="post-toc-number">1.3.1.</span> <span class="post-toc-text">RANSAC</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E9%9C%8D%E5%A4%AB%E5%8F%98%E6%8D%A2"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">霍夫变换</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E5%99%AA%E5%A3%B0%E5%A4%84%E7%90%86"><span class="post-toc-number">1.4.1.</span> <span class="post-toc-text">噪声处理</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#harris%E8%A7%92%E7%82%B9"><span class="post-toc-number">1.5.</span> <span class="post-toc-text">Harris角点</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#siftblob%E6%A3%80%E6%B5%8B"><span class="post-toc-number">1.6.</span> <span class="post-toc-text">SIFT(Blob检测)</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#sift"><span class="post-toc-number">1.6.1.</span> <span class="post-toc-text">SIFT</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E6%9C%89%E5%85%B3%E4%B8%8D%E5%8F%98%E6%80%A7"><span class="post-toc-number">1.6.1.1.</span> <span class="post-toc-text">有关不变性</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#sift%E7%89%B9%E5%BE%81%E5%8C%B9%E9%85%8D"><span class="post-toc-number">1.6.2.</span> <span class="post-toc-text">SIFT特征匹配</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E7%BA%B9%E7%90%86"><span class="post-toc-number">1.7.</span> <span class="post-toc-text">纹理</span></a></li></ol></li></ol>
         </nav>
     </aside>
 
@@ -207,16 +213,18 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <h1 id="滤波">滤波</h1>
+            <h1 id="计算机视觉">计算机视觉</h1>
+<h2 id="滤波">滤波</h2>
 <p>高斯核的性质：</p>
 <ul>
-<li>使用小方差的高斯核卷积多次和一个大的方差的高斯核卷积效果一样，比如使用方差为<span class="math inline">\(\sigma\)</span> 的高斯核卷积两次，和使用方差为<span class="math inline">\(\sqrt 2\sigma\)</span> 的高斯核卷积一次效果一样。上述关系类似勾股定理，第一次使用 <span class="math inline">\(m\sigma\)</span>卷积，第二次使用<span class="math inline">\(n\sigma\)</span>卷积，结果相当于使用<span class="math inline">\(\sqrt{m^2+n^2}\sigma\)</span>卷积</li>
-<li>高斯卷积核可以分解为x和y方向，分解为两个方向分别卷积</li>
-<li>选择卷积核大小：中心左右各3sigma，filter size：<span class="math inline">\(2\cdot3\sigma +1\)</span></li>
+<li><p>使用小方差的高斯核卷积多次和一个大的方差的高斯核卷积效果一样，比如使用方差为<span class="math inline">\(\sigma\)</span> 的高斯核卷积两次，和使用方差为<span class="math inline">\(\sqrt 2\sigma\)</span> 的高斯核卷积一次效果一样。上述关系类似勾股定理，第一次使用 <span class="math inline">\(m\sigma\)</span>卷积，第二次使用<span class="math inline">\(n\sigma\)</span>卷积，结果相当于使用<span class="math inline">\(\sqrt{m^2+n^2}\sigma\)</span>卷积</p>
+<p>m*m卷积核卷积n*n的图像，复杂度从<span class="math inline">\(O(n^2m^2)\)</span>变为<span class="math inline">\(O(n^2m)\)</span></p></li>
+<li><p>高斯卷积核可以分解为x和y方向，分解为两个方向分别卷积</p></li>
+<li><p>选择卷积核大小：中心左右各3sigma，filter size：<span class="math inline">\(2\cdot3\sigma +1\)</span></p></li>
 </ul>
 <p>中值滤波：</p>
 <p>使用卷积核中的中间值作为输出（可以类比max pooling，看作median pooling），可以去除椒盐噪声或白噪声</p>
-<h1 id="边缘">边缘</h1>
+<h2 id="边缘">边缘</h2>
 <p>Sobel算子：相当于先高斯后梯度<br />
 <span class="math display">\[
 \begin{bmatrix}
@@ -262,7 +270,9 @@ M_y = \begin{bmatrix}
                 </div>
                 <div class="image-caption">image-20230531145436679</div>
             </figure>
-<h1 id="最小二乘ransac">最小二乘&amp;RANSAC</h1>
+<p><img src="https://raw.githubusercontent.com/Xav1erW/blog-imgs/master/202305311845235.png" alt="image-20230531184557769" style="zoom:50%;" /></p>
+<p>x-direction水平梯度，竖直边缘，y-direction垂直梯度，水平边缘</p>
+<h2 id="最小二乘ransac">最小二乘&amp;RANSAC</h2>
 <p>最小二乘，检测线，只在垂直方向：对于<span class="math inline">\(XB=Y\)</span>的方程（<span class="math inline">\(B=[m\ b]^T\)</span>）最优解满足<br />
 <span class="math display">\[
 X^T XB = X^T Y
@@ -277,27 +287,27 @@ X^T XB = X^T Y
                 <div class="image-caption">image-20230530082917155</div>
             </figure>
 <p>参数选择：<span class="math inline">\(\sigma\)</span> 选择最小二乘后的平均残差的1.5倍</p>
-<h2 id="ransac">RANSAC</h2>
+<h3 id="ransac">RANSAC</h3>
 <p>迭代次数选择：根据迭代次数和外点率可以求得得到的直线的置信度<br />
 <span class="math display">\[
 (1-(1-e)^s)^N = 1-p
 \]</span><br />
 其中s时估计曲线需要的点的个数，对于直线就是2，e为外点率，不属于直线的点</p>
 <p>RANSAC算出一条线后还会将所有内点最小二乘算出最终的线</p>
-<h1 id="霍夫变换">霍夫变换</h1>
+<h2 id="霍夫变换">霍夫变换</h2>
 <p>求直线：直接用<span class="math inline">\(y = ax+b\)</span>也可以做，但是参数没有边界，同时无法表达垂直的线</p>
 <p>因此换成极坐标表示：<br />
 <span class="math display">\[
 x\cos \theta+y\sin\theta=\rho
 \]</span><br />
 <span class="math inline">\(\theta\)</span>可以在0-180穷举，还可改进，因为直线的点上梯度的方向垂直于线，可以通过梯度进一步缩小theta的搜索范围</p>
-<h2 id="噪声处理">噪声处理</h2>
+<h3 id="噪声处理">噪声处理</h3>
 <ul>
 <li>选择更好网格或者离散化，如果噪声多可以网格大一点，但是会不够准确</li>
 <li>提高邻居格子的评分（软门限），比如投票到某一格子，给该各自周边的bin也根据距离投票，比如中心投票加0.1，距离为1的加0.05，距离为2的加0.01，<strong>总分为1</strong></li>
 <li>减少外点数：只统计边缘的点和更确定的投票，比如对于直线，只投票梯度theta方向或theta附近方向投票</li>
 </ul>
-<h1 id="harris角点">Harris角点</h1>
+<h2 id="harris角点">Harris角点</h2>
 <p>好的特征的特性：</p>
 <ul>
 <li>可靠性，在不同的角度、不同的图片中都能有这个特征</li>
@@ -358,7 +368,7 @@ alpha经验值，取0.04到0.06，用M的行列式，减去M的迹（对角元�
 <li>旋转：同样是covariance</li>
 <li>尺度：图像放大缩小：可以考虑极端的，如果一个角放大足够大，也会变得平滑而不是角点，因此不是尺度不变的</li>
 </ul>
-<h1 id="siftblob检测">SIFT(Blob检测)</h1>
+<h2 id="siftblob检测">SIFT(Blob检测)</h2>
 <p>出发点：希望找到一种尺度不变的特征（针对角点的缺点），希望这个特征针对尺度是covariance的</p>
 <p>可视化：希望找到一个特征选择器，给一个点向周围画圆，到合适大小时这个圆半径得分最高，之前之后都小</p>
 <figure class="image-bubble">
@@ -424,7 +434,7 @@ alpha经验值，取0.04到0.06，用M的行列式，减去M的迹（对角元�
 <li>Harris-Laplacian：在角点附近搜索特征点</li>
 <li>SIFT：Scale-Invariant Feature Transform</li>
 </ul>
-<h2 id="sift">SIFT</h2>
+<h3 id="sift">SIFT</h3>
 <p>提出了laplacian的改进：高斯差分DoG，结果和拉普拉斯很像：<span class="math inline">\(G(x,y,k\sigma)-G(x,y,\sigma) \approx (k-1)\sigma^2\nabla^2G\)</span></p>
 <figure class="image-bubble">
                 <div class="img-lightbox">
@@ -449,7 +459,7 @@ alpha经验值，取0.04到0.06，用M的行列式，减去M的迹（对角元�
 <p>k如何设置？<span class="math inline">\(k=2^{1/s}\)</span>，其中s代表最终能输出多少个尺度，上图为例，一共得到了四个高斯差分，每相邻三个高斯差分的中间能得到一个最终的尺度表达，那么四个最终能输出<span class="math inline">\(k\sigma\)</span>和$k^2<span class="math inline">\(2个尺度的表达，因此\)</span>s=2$</p>
 <p>这样能够形成连续的尺度空间，因此最初的高斯的层数取决于选择的s。</p>
 <p>并且对于上图的情况，我们通常把倒数第三层直接下采样，就变成了上一级octave的第一层</p>
-<h3 id="有关不变性">有关不变性</h3>
+<h4 id="有关不变性">有关不变性</h4>
 <p>拉普拉斯的响应：旋转和尺度不变invariant</p>
 <p>Blob的位置和尺度是旋转和尺度的协变covariant</p>
 <p>SIFT对于视角不是不变的，因为视角改变，圆可能变成椭圆</p>
@@ -463,10 +473,33 @@ alpha经验值，取0.04到0.06，用M的行列式，减去M的迹（对角元�
 <p><img src="https://raw.githubusercontent.com/Xav1erW/blog-imgs/master/202305311713622.png" alt="image-20230531171316574" style="zoom:50%;" /></p>
 <p>SIFT描述符不局限于SIFT算法：Harris+Laplacian也可以得到区域，也可以使用sift描述符表示。</p>
 <p>拆分成小格：在局部上做直方图上统计，能够保留一些空间特征（patch顺序保留了一些空间信息）</p>
-<h2 id="sift特征匹配">SIFT特征匹配</h2>
+<h3 id="sift特征匹配">SIFT特征匹配</h3>
 <p>两张对同一物品的图片如何匹配SIFT特征，两两计算特征距离，但是如何定义门限？</p>
 <p>对于一个特征，看与他匹配的另一张图的特征的第一近邻和第二近邻的距离，如果差异较大，说明匹配成功；如果差异不大说明匹配模糊，可能错误丢弃</p>
-<h1 id="纹理">纹理</h1>
+<h2 id="纹理">纹理</h2>
+<p>用处：</p>
+<ol type="1">
+<li>从纹理中恢复形状（从纹理的变化）</li>
+<li>分割或分类：不同物体的纹理特性不同，识别不同的材质，识别水果，区分动物。</li>
+<li>合成：给定纹理合成更多的纹理，下图给出了纹理的分类和合成区别</li>
+</ol>
+<p><img src="https://raw.githubusercontent.com/Xav1erW/blog-imgs/master/202305311835755.png" alt="image-20230531183549426" style="zoom:50%;" /></p>
+<p>希望找到一种特征比边缘更高级，表示纹理。</p>
+<p>纹理由重复的一些模式构成，那么我们需要发现模式，描述区域里模式的关系。</p>
+<p>纹理表示：分成小窗口，计算水平和垂直梯度，表示到二维平面上，可以看出能够分为几类，可以使用kmeans聚类</p>
+<p><img src="https://raw.githubusercontent.com/Xav1erW/blog-imgs/master/202305311902031.png" alt="image-20230531190252671" style="zoom: 50%;" /><img src="https://raw.githubusercontent.com/Xav1erW/blog-imgs/master/202305311903858.png" alt="image-20230531190341628" style="zoom:50%;" /></p>
+<p>这种表示方法有尺度问题：窗口大小的选择，可以选择不同大小的窗口，某一段尺度窗口大小纹理信息不怎么变化代表尺度合适。</p>
+<p>只用边缘信息可能不够，那么我们可以使用更多的滤波器获得更多的特征，d个滤波器获得d维的特征，比如下图，考虑了尺度、方向，检测了边、条、点</p>
+<p><img src="https://raw.githubusercontent.com/Xav1erW/blog-imgs/master/202305311909508.png" alt="image-20230531190931129"  /></p>
+<p>上述斜着的高斯核协方差矩阵中x，y相关</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://raw.githubusercontent.com/Xav1erW/blog-imgs/master/202305311912179.png" alt="image-20230531191239594" title="">
+                </div>
+                <div class="image-caption">image-20230531191239594</div>
+            </figure>
+<p>获得到这些特征后，每个像素都对应一个48维的向量，我们可以做global avg pooling，最终用一个48维的向量表示图片做分类，或者直接拼接。（操作和卷积神经网络最后的分类头一模一样）</p>
 
         </div>
 
@@ -475,7 +508,7 @@ alpha经验值，取0.04到0.06，用M的行列式，减去M的迹（对角元�
     <div class="content">
         
 <span class="post-time">
-    最后更新时间：<time datetime="2023-05-31T10:34:14.578Z" itemprop="dateUpdated">2023-05-31 18:34:14</time>
+    最后更新时间：<time datetime="2023-05-31T11:24:30.009Z" itemprop="dateUpdated">2023-05-31 19:24:30</time>
 </span><br>
 
 
