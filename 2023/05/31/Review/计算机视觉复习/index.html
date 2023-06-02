@@ -70,9 +70,16 @@
 <meta property="og:image" content="https://raw.githubusercontent.com/Xav1erW/blog-imgs/master/202306012036208.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/Xav1erW/blog-imgs/master/202306012240130.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/Xav1erW/blog-imgs/master/202306012243546.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/Xav1erW/blog-imgs/master/202306021340608.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/Xav1erW/blog-imgs/master/202306012204499.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/Xav1erW/blog-imgs/master/202306021021315.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/Xav1erW/blog-imgs/master/202306021030339.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/Xav1erW/blog-imgs/master/202306021034571.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/Xav1erW/blog-imgs/master/202306021301735.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/Xav1erW/blog-imgs/master/202306021329678.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/Xav1erW/blog-imgs/master/202306021348493.png">
 <meta property="article:published_time" content="2023-05-30T16:00:00.000Z">
-<meta property="article:modified_time" content="2023-06-02T01:51:48.657Z">
+<meta property="article:modified_time" content="2023-06-02T05:55:40.937Z">
 <meta property="article:author" content="Xav1er">
 <meta property="article:tag" content="课内">
 <meta property="article:tag" content="复习">
@@ -205,7 +212,7 @@
     <aside class="post-widget">
         <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#%E6%BB%A4%E6%B3%A2"><span class="post-toc-number">1.</span> <span class="post-toc-text">滤波</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#%E8%BE%B9%E7%BC%98"><span class="post-toc-number">2.</span> <span class="post-toc-text">边缘</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#%E6%9C%80%E5%B0%8F%E4%BA%8C%E4%B9%98ransac"><span class="post-toc-number">3.</span> <span class="post-toc-text">最小二乘&amp;RANSAC</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#ransac"><span class="post-toc-number">3.1.</span> <span class="post-toc-text">RANSAC</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#%E9%9C%8D%E5%A4%AB%E5%8F%98%E6%8D%A2"><span class="post-toc-number">4.</span> <span class="post-toc-text">霍夫变换</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E5%99%AA%E5%A3%B0%E5%A4%84%E7%90%86"><span class="post-toc-number">4.1.</span> <span class="post-toc-text">噪声处理</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#harris%E8%A7%92%E7%82%B9"><span class="post-toc-number">5.</span> <span class="post-toc-text">Harris角点</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#siftblob%E6%A3%80%E6%B5%8B"><span class="post-toc-number">6.</span> <span class="post-toc-text">SIFT(Blob检测)</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#sift"><span class="post-toc-number">6.1.</span> <span class="post-toc-text">SIFT</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E6%9C%89%E5%85%B3%E4%B8%8D%E5%8F%98%E6%80%A7"><span class="post-toc-number">6.1.1.</span> <span class="post-toc-text">有关不变性</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#sift%E7%89%B9%E5%BE%81%E5%8C%B9%E9%85%8D"><span class="post-toc-number">6.2.</span> <span class="post-toc-text">SIFT特征匹配</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#%E7%BA%B9%E7%90%86"><span class="post-toc-number">7.</span> <span class="post-toc-text">纹理</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#%E5%88%86%E5%89%B2"><span class="post-toc-number">8.</span> <span class="post-toc-text">分割</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E5%88%86%E5%89%B2%E6%96%B9%E6%B3%95%E8%81%9A%E7%B1%BB"><span class="post-toc-number">8.1.</span> <span class="post-toc-text">分割方法：聚类</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#mean-shift-%E5%9D%87%E5%80%BC%E6%BC%82%E7%A7%BB"><span class="post-toc-number">8.2.</span> <span class="post-toc-text">Mean Shift 均值漂移</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E5%9B%BE%E5%83%8F%E7%9C%8B%E6%88%90%E5%9B%BEgraph"><span class="post-toc-number">8.3.</span> <span class="post-toc-text">图像看成图(graph)</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#minimun-cut"><span class="post-toc-number">8.3.1.</span> <span class="post-toc-text">Minimun cut</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#normalize-cut%E5%BD%92%E4%B8%80%E5%8C%96%E5%9B%BE%E5%89%B2"><span class="post-toc-number">8.3.1.1.</span> <span class="post-toc-text">normalize cut归一化图割：</span></a></li></ol></li></ol></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#%E8%AF%86%E5%88%AB%E5%88%86%E7%B1%BB"><span class="post-toc-number">9.</span> <span class="post-toc-text">识别&amp;分类</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E8%A1%A8%E8%BE%BE"><span class="post-toc-number">9.1.</span> <span class="post-toc-text">表达</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E8%AF%8D%E8%A2%8B"><span class="post-toc-number">9.1.1.</span> <span class="post-toc-text">词袋</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E7%A9%BA%E9%97%B4%E9%87%91%E5%AD%97%E5%A1%94%E8%A1%A8%E7%A4%BA"><span class="post-toc-number">9.1.2.</span> <span class="post-toc-text">空间金字塔表示</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E5%AD%A6%E4%B9%A0"><span class="post-toc-number">9.2.</span> <span class="post-toc-text">学习</span></a></li></ol></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#%E6%BB%A4%E6%B3%A2"><span class="post-toc-number">1.</span> <span class="post-toc-text">滤波</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#%E8%BE%B9%E7%BC%98"><span class="post-toc-number">2.</span> <span class="post-toc-text">边缘</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#%E6%9C%80%E5%B0%8F%E4%BA%8C%E4%B9%98ransac"><span class="post-toc-number">3.</span> <span class="post-toc-text">最小二乘&amp;RANSAC</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#ransac"><span class="post-toc-number">3.1.</span> <span class="post-toc-text">RANSAC</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#%E9%9C%8D%E5%A4%AB%E5%8F%98%E6%8D%A2"><span class="post-toc-number">4.</span> <span class="post-toc-text">霍夫变换</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E5%99%AA%E5%A3%B0%E5%A4%84%E7%90%86"><span class="post-toc-number">4.1.</span> <span class="post-toc-text">噪声处理</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#harris%E8%A7%92%E7%82%B9"><span class="post-toc-number">5.</span> <span class="post-toc-text">Harris角点</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#siftblob%E6%A3%80%E6%B5%8B"><span class="post-toc-number">6.</span> <span class="post-toc-text">SIFT(Blob检测)</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#sift"><span class="post-toc-number">6.1.</span> <span class="post-toc-text">SIFT</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E6%9C%89%E5%85%B3%E4%B8%8D%E5%8F%98%E6%80%A7"><span class="post-toc-number">6.1.1.</span> <span class="post-toc-text">有关不变性</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#sift%E7%89%B9%E5%BE%81%E5%8C%B9%E9%85%8D"><span class="post-toc-number">6.2.</span> <span class="post-toc-text">SIFT特征匹配</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#%E7%BA%B9%E7%90%86"><span class="post-toc-number">7.</span> <span class="post-toc-text">纹理</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#%E5%88%86%E5%89%B2"><span class="post-toc-number">8.</span> <span class="post-toc-text">分割</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E5%88%86%E5%89%B2%E6%96%B9%E6%B3%95%E8%81%9A%E7%B1%BB"><span class="post-toc-number">8.1.</span> <span class="post-toc-text">分割方法：聚类</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#mean-shift-%E5%9D%87%E5%80%BC%E6%BC%82%E7%A7%BB"><span class="post-toc-number">8.2.</span> <span class="post-toc-text">Mean Shift 均值漂移</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E5%9B%BE%E5%83%8F%E7%9C%8B%E6%88%90%E5%9B%BEgraph"><span class="post-toc-number">8.3.</span> <span class="post-toc-text">图像看成图(graph)</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#minimun-cut"><span class="post-toc-number">8.3.1.</span> <span class="post-toc-text">Minimun cut</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#normalize-cut%E5%BD%92%E4%B8%80%E5%8C%96%E5%9B%BE%E5%89%B2"><span class="post-toc-number">8.3.1.1.</span> <span class="post-toc-text">normalize cut归一化图割：</span></a></li></ol></li></ol></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#%E8%AF%86%E5%88%AB%E5%88%86%E7%B1%BB"><span class="post-toc-number">9.</span> <span class="post-toc-text">识别&amp;分类</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E8%A1%A8%E8%BE%BE"><span class="post-toc-number">9.1.</span> <span class="post-toc-text">表达</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E8%AF%8D%E8%A2%8B"><span class="post-toc-number">9.1.1.</span> <span class="post-toc-text">词袋</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E7%A9%BA%E9%97%B4%E9%87%91%E5%AD%97%E5%A1%94%E8%A1%A8%E7%A4%BA"><span class="post-toc-number">9.1.2.</span> <span class="post-toc-text">空间金字塔表示</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E5%AD%A6%E4%B9%A0"><span class="post-toc-number">9.2.</span> <span class="post-toc-text">学习</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B"><span class="post-toc-number">10.</span> <span class="post-toc-text">目标检测</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E4%BA%BA%E8%84%B8%E6%A3%80%E6%B5%8B"><span class="post-toc-number">10.1.</span> <span class="post-toc-text">人脸检测</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#boosting%E7%AE%97%E6%B3%95"><span class="post-toc-number">10.1.1.</span> <span class="post-toc-text">Boosting算法</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#boost%E5%9C%A8%E4%BA%BA%E8%84%B8%E6%A3%80%E6%B5%8B"><span class="post-toc-number">10.1.2.</span> <span class="post-toc-text">Boost在人脸检测</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E7%A7%AF%E5%88%86%E5%9B%BE"><span class="post-toc-number">10.1.2.1.</span> <span class="post-toc-text">积分图</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E8%A1%8C%E4%BA%BA%E6%A3%80%E6%B5%8B"><span class="post-toc-number">10.2.</span> <span class="post-toc-text">行人检测</span></a></li></ol></li></ol>
         </nav>
     </aside>
 
@@ -348,10 +355,8 @@ M = R^{-1}\begin{bmatrix}\lambda_1 &amp; 0\\ 0 &amp; \lambda_2\end{bmatrix} R
 \]</span><br />
 那么最终可以表示为<br />
 <span class="math display">\[
-\begin{aligned}
 E(u,v)&amp;=[u\quad v] R^{-1} M&#39; R[u\quad v]^T\\
 &amp;= (R[u\quad v])^T M&#39;(R[u\quad v]^T)
-\end{aligned}
 \]</span><br />
 注：因为R正交所以转置和逆相等</p>
 <p>这样就相当于把角旋转正。上面的lambda1，2是和椭圆的轴有关，<span class="math inline">\(\sqrt{1/\lambda}\)</span> 是轴的长度，lambda越大，轴越短，<strong>那么lambda越大那么梯度变化越快</strong></p>
@@ -636,14 +641,153 @@ alpha经验值，取0.04到0.06，用M的行列式，减去M的迹（对角元�
 <p>产生式、判别式</p>
 <p>判别：区分不同的分布</p>
 <p>产生：建模事物的规律，直接学习分布</p>
+<p><img src="https://raw.githubusercontent.com/Xav1erW/blog-imgs/master/202306021340608.png" alt="image-20230602134015697" style="zoom:50%;" /></p>
 <p>判别模型建模的是<strong>后验概率</strong>，生成模型建模的是<strong>似然和先验概率</strong></p>
 <p><img src="https://raw.githubusercontent.com/Xav1erW/blog-imgs/master/202306012204499.png" alt="image-20230601220403384" style="zoom:50%;" /></p>
-<p>先验描述整体上是斑马和不是斑马的概率，似然描述是斑马和不是斑马的图像的分布，后验描述给定图像是斑马和不是斑马的概率。根据上式，生成模型也能判别。</p>
+<p>先验描述整体上是斑马和不是斑马的概率，似然描述是斑马和不是斑马的图像的分布，后验描述给定图像是斑马和不是斑马的概率。根据上式，生成模型也能判别：建模出了似然和先验，那么对于给定的图片（相当于一个随机变量的值）可以计算出对应的似然和先验，那么就得到了后验概率比值。</p>
 <p>学习就是去调整模型参数使某个指标最大。</p>
 <p>标签等级：noise label 弱监督，可能标签是错的</p>
 <p>标签是整个给的还是增量的：可能一次给出所有样本，还可能是增量学习，一天增加几个</p>
 <p>先验：先验如何获取，从领域或行业知识获取</p>
 <p>检测任务最终目标：从图像中的一堆窗口中判断窗口是否是目标（包含窗口的位置，角度，大小，类别）</p>
+<h1 id="目标检测">目标检测</h1>
+<p>希望得到目标的位置：建立一个检测的模板，在图像中搜索哪一部分可以和模板匹配到。</p>
+<p>难点：</p>
+<ul>
+<li>光照、物体的姿态、杂波、遮挡、类内的外貌不同、视角；</li>
+<li>不能和背景混在一起，那么如何建模背景，特征容易混淆的物体</li>
+<li>如何高效搜索：不同尺度、不同位置的框很多</li>
+<li>如何设计特征建模物体</li>
+<li>如何解决不同视角：12年之前使用不同的模型训练不同的视角</li>
+</ul>
+<h2 id="人脸检测">人脸检测</h2>
+<p>检测和识别：检测拿出人脸，识别认识是哪个脸</p>
+<p>单张图人脸较少，那么在背景处少检测，脸部分多检测</p>
+<p>使用Adaboost</p>
+<h3 id="boosting算法">Boosting算法</h3>
+<p>集成多个弱分类器：给定n个二分类的弱分类器，首先分类，选出分类精度最高的（大于50%），把他的权重加大</p>
+<p>最后分类器：<br />
+<span class="math display">\[
+h(x) = \alpha_1h_1(x) + \alpha_2h_2(x) + \alpha_2h_2(x)+\cdots 
+\]</span><br />
+单个分类器：<br />
+<span class="math display">\[
+h_j(x) = \left\{
+\begin{aligned}
+&amp;1  \quad f_j(x)&gt;\theta_j\\
+&amp;0
+\end{aligned}
+\right.
+\]</span><br />
+总的分类器：<br />
+<span class="math display">\[
+h_j(x) = \left\{
+\begin{aligned}
+&amp;1  \quad \sum_{t=1}^T \alpha_t h_t(x)&gt;\frac{1}{2}\sum_{t=1}^T\alpha_t\\
+&amp;0
+\end{aligned}
+\right.
+\]</span></p>
+<h3 id="boost在人脸检测">Boost在人脸检测</h3>
+<ul>
+<li>训练很慢但推理很快</li>
+</ul>
+<p>主要思想</p>
+<ul>
+<li>积分图，建立多个有分类能力的弱分类器</li>
+<li>特征选择上应用boosting，使用上述弱分类器组合强分类器</li>
+<li>使用级联块拒绝非人脸的区域</li>
+</ul>
+<p>每个弱分类器有以下属性：</p>
+<ul>
+<li><p>4个type，通过卷积核拿到，白区域减黑区域</p>
+<p><img src="https://raw.githubusercontent.com/Xav1erW/blog-imgs/master/202306021021315.png" alt="image-20230602102145860" style="zoom:50%;" /></p></li>
+<li><p>pos：区域的位置x,y</p></li>
+<li><p>size：区域的面积w,h</p></li>
+</ul>
+<p>最终每个分类器只负责自己pos和size区域的type特征，结果大于门限投1分否则0分作为分类结果</p>
+<p>计算所有的卷积比较慢：加速使用<strong>积分图</strong></p>
+<h4 id="积分图">积分图</h4>
+<p>图中<span class="math inline">\(i,j\)</span>位置的值是他左上方所有像素的求和</p>
+<p><img src="https://raw.githubusercontent.com/Xav1erW/blog-imgs/master/202306021030339.png" alt="image-20230602103031140" style="zoom:50%;" /><br />
+<span class="math display">\[
+I_\sum(x,y) = \sum_{x&#39;\leq x; y&#39; \leq y}i(x&#39;, y&#39;)
+\]</span><br />
+有了积分图后，可以很方便的计算面积（区域内的像素求和）：</p>
+<p><img src="https://raw.githubusercontent.com/Xav1erW/blog-imgs/master/202306021034571.png" alt="image-20230602103407542" style="zoom:50%;" /><br />
+<span class="math display">\[
+S_{ABCD} = A-B-C+D
+\]</span><br />
+三次加法就能得到任何区域的求和。</p>
+<p>算法详细可以参考<a target="_blank" rel="noopener" href="https://www.jianshu.com/p/7ab4986ddbe5">人脸检测算法之Haar-Adaboost分类器原理 - 简书 (jianshu.com)</a>，下面简述步骤</p>
+<p>步骤：</p>
+<ol type="1">
+<li><p>对于每个弱分类器（type、pos、size）：输入所有的训练图片（可能有几万张）根据分类的结果，选择最优的门限，在可能的范围内枚举，选择最好的。</p></li>
+<li><p>选择分类器的最优的权重</p>
+<ol type="1">
+<li>所有样本权重归一化，如果是第一次，所有权重一样</li>
+<li>对于每一个特征 <span class="math inline">\(\epsilon_j = \sum_i w_i |h_j(x_i) - y_i|\)</span>其中的<span class="math inline">\(w_i\)</span>是样本的权重，训练的时候使用的，用来给不同样本不同特征，从而筛选出不同的分类器</li>
+<li>选择最低错误率的分类器</li>
+</ol></li>
+<li><p>更新权重（把分正确的样本权重缩小，相对的错误的权重就增大，能选出下一个分类出这些错误样本的分类器）<br />
+<span class="math display">\[
+w_{t+1, i} \gets w_{t,i}\beta_t^{1-|h_t(x_i) - y_i|} \qquad \beta_t =\frac{\epsilon_t}{1-\epsilon_t}
+\]</span></p></li>
+<li><p>最终分类器：<br />
+<span class="math display">\[
+h(x) = \left\{
+\begin{aligned}
+&amp;1  \quad \sum_{t=1}^T \alpha_t h_t(x)&gt;\frac{1}{2}\sum_{t=1}^T\alpha_t\\
+&amp;0
+\end{aligned}
+\right.
+\qquad \alpha_t = \log \frac{1}{\beta_t}
+\]</span></p></li>
+</ol>
+<p>需要强调的是：训练的时候数据只有单独的人脸，每个24*24；推理的时候把图像割成不同大小的区域，reshape到24*24，送到分类器中判断区域是不是人脸。</p>
+<p>对快速检测的级联：</p>
+<p>因为上面的检测虽然精度高，但是每张图有极大数量的特征，如果都送到上面的强分类器中需要很大的运算量和时间</p>
+<ul>
+<li>将强分类器级联，每个强分类器不需要很高的精度（Precision），假阳率高没问题，但要尽可能的将正样本判断正确（高召回率）。比如只需要50%正确率，输出100个预测的正样本，只要其中50个是真正的正样本即可。</li>
+<li>在前一个分类器的基础上，只分类被第一个分类器过滤的区域（每层只考虑前一层没有解决的问题）</li>
+</ul>
+<p><img src="https://raw.githubusercontent.com/Xav1erW/blog-imgs/master/202306021301735.png" alt="image-20230602130149486" style="zoom:50%;" /></p>
+<p>分清楚：</p>
+<ul>
+<li>漏检率，如果每个召回率99%，漏检1%，那么如果叠10层，那么最终只检测出<span class="math inline">\(0.99^{10}\approx0.9\)</span></li>
+<li>误检率：如果每个误检率0.3，那么最终误检<span class="math inline">\(0.3^{10} \approx 6*10^{-6}\)</span></li>
+</ul>
+<p>针对级联的，每个强分类器都需要学习，一个个训练，训练完挂在级联串后面，指定强分类器的指标，比如召回率0.99，查准率50%</p>
+<p>级联的训练：</p>
+<p>正样本：5000张脸24*24，负样本：9500张非人脸图片中抽取出的300m负样本</p>
+<p>每轮训练5000正，5000负</p>
+<p>对于stage1：5000正样本，从9500张负样本中随机（大小、位置）扣出来5000张负样本，变为24*24的</p>
+<p>对于stage2：5000正样本不变，再从9500张负样本采样负样本，送给stage1，stage1分错的（负分类成正），送给stage2当作负样本，也这样采样出5000个负样本</p>
+<p>后面的stage同理</p>
+<p>检测出人脸后还可以做人脸识别：</p>
+<ol type="1">
+<li>找出人脸</li>
+<li>定位眼睛嘴巴鼻子</li>
+<li>将上述五官缩放定位到标准模板</li>
+<li>最终分类</li>
+</ol>
+<h2 id="行人检测">行人检测</h2>
+<p><img src="https://raw.githubusercontent.com/Xav1erW/blog-imgs/master/202306021329678.png" alt="image-20230602132905637" style="zoom:50%;" /></p>
+<p>对于每个行人的样本，计算梯度直方图</p>
+<p>步骤：</p>
+<p>图像必须是64*128的，将图像分成16*16的block，block分成4块，每块8*8，在这个8*8的区域内提取梯度方向直方图（9个方向，每40°分一次，因此是9维），那么一个block就是4*9=36维。</p>
+<p>对于第二个block，在第一个block的基础上步长为8，相当于重叠一半，继续这样计算。</p>
+<p>这种方式可以得到105个区域，每个区域36维，最终得到3780维的HoG特征。</p>
+<p>拿这个向量训练SVM。</p>
+<p>之后对于给定的图像可以选取一个64*128的区域，按上述方法提取特征，拿线性SVM分类，最终非极大抑制</p>
+<p>本质就是通过SVM选择出了一个模板，测试的时候将特征和模板进行比较。</p>
+<p><img src="https://raw.githubusercontent.com/Xav1erW/blog-imgs/master/202306021348493.png" alt="image-20230602134831000" style="zoom:50%;" /></p>
+<p>本身就是滑动窗口的方法：</p>
+<ul>
+<li>非常时候人脸检测</li>
+<li>车和行人检测也不错</li>
+<li>对狗、猫等检测效果不好，因为他们会形变</li>
+</ul>
 
         </div>
 
@@ -652,7 +796,7 @@ alpha经验值，取0.04到0.06，用M的行列式，减去M的迹（对角元�
     <div class="content">
         
 <span class="post-time">
-    最后更新时间：<time datetime="2023-06-02T01:51:48.657Z" itemprop="dateUpdated">2023-06-02 09:51:48</time>
+    最后更新时间：<time datetime="2023-06-02T05:55:40.937Z" itemprop="dateUpdated">2023-06-02 13:55:40</time>
 </span><br>
 
 
