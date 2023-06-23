@@ -150,7 +150,7 @@
 <meta property="og:image" content="https://raw.githubusercontent.com/Xav1erW/blog-imgs/master/202306041054655.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/Xav1erW/blog-imgs/master/202306041058200.png">
 <meta property="article:published_time" content="2023-05-30T16:00:00.000Z">
-<meta property="article:modified_time" content="2023-06-04T05:24:13.274Z">
+<meta property="article:modified_time" content="2023-06-23T12:48:22.091Z">
 <meta property="article:author" content="Xav1er">
 <meta property="article:tag" content="课内">
 <meta property="article:tag" content="复习">
@@ -498,9 +498,9 @@ E(u,v)&amp;=[u\quad v] R^{-1} M&#39; R[u\quad v]^T\\
 </ul>
 <p>最终判断通过公式：<br />
 <span class="math display">\[
-R = \det(M) - \alpha \trace(M) = \lambda_1\lambda_2 - \alpha (\lambda_1+\lambda_2)^2
+R = \det(M) - \alpha \text{trace}(M)^2 = \lambda_1\lambda_2 - \alpha (\lambda_1+\lambda_2)^2
 \]</span><br />
-alpha经验值，取0.04到0.06，用M的行列式，减去M的迹（对角元素和），这样不用求特征值，对于<span class="math inline">\(M=\begin{bmatrix}a&amp;c\\c&amp;b\end{bmatrix}\)</span> 直接用<span class="math inline">\((ab-c^2)-\alpha(a+b)\)</span></p>
+alpha经验值，取0.04到0.06，用M的行列式，减去M的迹（对角元素和），这样不用求特征值，对于<span class="math inline">\(M=\begin{bmatrix}a&amp;c\\c&amp;b\end{bmatrix}\)</span> 直接用<span class="math inline">\((ab-c^2)-\alpha(a+b)^2\)</span></p>
 <p>最终<span class="math inline">\(R&gt;0\)</span>是角点，<span class="math inline">\(R&lt;0\)</span>是边，<span class="math inline">\(R\approx 0\)</span> 是平坦区域</p>
 <p>总体流程：</p>
 <ol type="1">
@@ -1155,7 +1155,7 @@ H&#39; = T^{-1}GRT
     <div class="content">
         
 <span class="post-time">
-    最后更新时间：<time datetime="2023-06-04T05:24:13.274Z" itemprop="dateUpdated">2023-06-04 13:24:13</time>
+    最后更新时间：<time datetime="2023-06-23T12:48:22.091Z" itemprop="dateUpdated">2023-06-23 20:48:22</time>
 </span><br>
 
 
