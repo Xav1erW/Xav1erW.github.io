@@ -6,7 +6,7 @@
   <link href="https://blog.x-wang.tech/atom.xml" rel="self"/>
   
   <link href="https://blog.x-wang.tech/"/>
-  <updated>2023-06-23T12:48:22.091Z</updated>
+  <updated>2024-06-23T13:04:52.398Z</updated>
   <id>https://blog.x-wang.tech/</id>
   
   <author>
@@ -15,6 +15,35 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>PIL打开后图像自动旋转问题</title>
+    <link href="https://blog.x-wang.tech/2024/06/23/PIL%E6%89%93%E5%BC%80%E5%90%8E%E5%9B%BE%E5%83%8F%E8%87%AA%E5%8A%A8%E6%97%8B%E8%BD%AC%E9%97%AE%E9%A2%98/"/>
+    <id>https://blog.x-wang.tech/2024/06/23/PIL%E6%89%93%E5%BC%80%E5%90%8E%E5%9B%BE%E5%83%8F%E8%87%AA%E5%8A%A8%E6%97%8B%E8%BD%AC%E9%97%AE%E9%A2%98/</id>
+    <published>2024-06-23T12:56:54.000Z</published>
+    <updated>2024-06-23T13:04:52.398Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="pil打开后图像自动旋转问题">PIL打开后图像自动旋转问题</h1><p>在使用python批量处理照片的时候发现了一个问题：</p><p>PIL库打开图像再保存后图像的方向会不同</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">img = Image.<span class="built_in">open</span>(<span class="string">&quot;/path/to/img&quot;</span>)</span><br><span class="line"></span><br><span class="line">img.save(<span class="string">&quot;./origin.jpg&quot;</span>)</span><br></pre></td></tr></table></figure><p>查询后得知jpg图像会有exif头，可能会有图像保存图像在一个方向，而图像头会有一个参数使得查看的时候旋转一个角度。就比如相机拍照的时候，记录数据应该是正常记录，但是我们拍照时有时是竖着的，有时是横着的，这个数据可能是通过相机的重力感应记录图像是否需要旋转为竖着。</p><p>但是PIL不会自动根据这个记录来自动旋转，可以通过如下操作手动旋转</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> PIL <span class="keyword">import</span> Image, ImageOps</span><br><span class="line">im = Image.<span class="built_in">open</span>(<span class="string">&quot;file.jpg&quot;</span>)</span><br><span class="line">im = ImageOps.exif_transpose(im)</span><br></pre></td></tr></table></figure><blockquote><p>参考：<a href="https://github.com/python-pillow/Pillow/issues/4703">PIL.Image.open is rotating jpeg images · Issue #4703 · python-pillow/Pillow (github.com)</a></p></blockquote>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;pil打开后图像自动旋转问题&quot;&gt;PIL打开后图像自动旋转问题&lt;/h1&gt;
+&lt;p&gt;在使用python批量处理照片的时候发现了一个问题：&lt;/p&gt;
+&lt;p&gt;PIL库打开图像再保存后图像的方向会不同&lt;/p&gt;
+&lt;figure class=&quot;highlight python</summary>
+      
+    
+    
+    
+    <category term="-Tech" scheme="https://blog.x-wang.tech/categories/Tech/"/>
+    
+    
+    <category term="图像处理" scheme="https://blog.x-wang.tech/tags/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86/"/>
+    
+    <category term="python" scheme="https://blog.x-wang.tech/tags/python/"/>
+    
+  </entry>
   
   <entry>
     <title>计算机视觉</title>
